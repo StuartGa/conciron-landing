@@ -11,7 +11,7 @@ interface BrandLogoProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'
 
 /**
  * Brand mark for header and footer on dark surfaces.
- * Uses a CSS filter so the logo reads as white instead of disappearing into the background.
+ * Set `onDark={false}` when using the full-color orange logo on charcoal backgrounds.
  */
 export function BrandLogo({ src, className, onDark = true, ...props }: BrandLogoProps) {
   return (

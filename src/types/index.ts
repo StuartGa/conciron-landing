@@ -66,6 +66,8 @@ export interface SiteContent {
   brand: {
     name: string
     tagline: string
+    /** Full-color brand mark (orange) for header on dark backgrounds */
+    logoHeader: string
     logo: string
     logoIcon: string
     logoWhite: string
