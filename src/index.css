@@ -41,6 +41,10 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    color-scheme: dark;
+    scrollbar-color: auto;
+    scrollbar-width: auto;
+    accent-color: auto;
   }
 
   body {

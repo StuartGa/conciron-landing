@@ -24,7 +24,7 @@ export const siteConfig = {
   locale: 'es_MX',
   lang: 'es',
   ogImage: '/images/hero.webp',
-  themeColor: '#f26522',
+  themeColor: '#131313',
   email: 'cotizaciones@conciron.com.mx',
   phone: '+52-55-1234-5678',
   country: 'MX',
