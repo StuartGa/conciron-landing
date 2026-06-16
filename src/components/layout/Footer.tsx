@@ -1,5 +1,5 @@
 import { siteContent } from '@/data/siteContent'
-import { PublicImage } from '@/components/ui/PublicImage'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 
 /**
  * Site footer with brand info, navigation groups, contact details and legal links.
@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
           <div className="lg:col-span-2">
             <a href="#inicio" className="flex items-center gap-3 mb-6">
-              <PublicImage src={brand.logoWhite} alt={brand.name} className="h-8 w-auto" />
+              <BrandLogo src={brand.logo} alt={brand.name} className="h-8 w-auto" />
             </a>
             <p className="text-on-surface-variant mb-6 max-w-sm">{footer.description}</p>
           </div>

@@ -1,7 +1,7 @@
 import { siteContent } from '@/data/siteContent'
 import { useScrollHeader } from '@/hooks/useScrollHeader'
 import { Button } from '@/components/ui/Button'
-import { PublicImage } from '@/components/ui/PublicImage'
+import { BrandLogo } from '@/components/ui/BrandLogo'
 import { cn } from '@/lib/cn'
 
 /**
@@ -23,7 +23,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <a href="#inicio" className="flex items-center gap-3" aria-label={`${brand.name} — inicio`}>
-            <PublicImage src={brand.logoWhite} alt="" className="h-10 w-auto" aria-hidden />
+            <BrandLogo src={brand.logo} alt="" className="h-10 w-auto" aria-hidden />
             <span className="sr-only">{brand.name}</span>
           </a>
 
