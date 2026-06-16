@@ -147,6 +147,16 @@ export const siteContent: SiteContent = {
         imageFit: 'contain',
       },
       {
+        id: 'concreto-convencional',
+        title: 'Concreto Convencional',
+        description:
+          'Concreto premezclado para aplicaciones generales en obra: losas, firmes, rellenos y elementos no estructurales.',
+        image: '/images/product-concreto-convencional.jpg',
+        imageAlt: 'Servicio de concreto premezclado convencional',
+        href: '#contacto',
+        imageFit: 'cover',
+      },
+      {
         id: 'concreto-estructural',
         title: 'Concreto Estructural',
         description:
