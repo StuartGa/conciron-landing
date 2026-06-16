@@ -1,7 +1,6 @@
 import { lazy, Suspense } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { SkipLink } from '@/components/seo/SkipLink'
 import { StructuredData } from '@/components/seo/StructuredData'
 import { HeroSection } from '@/components/sections/HeroSection'
@@ -40,7 +39,6 @@ export default function App() {
     <>
       <StructuredData />
       <SkipLink />
-      <ScrollProgress />
       <Header />
       <main id="main-content">
         <HeroSection />
