@@ -1,5 +1,6 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
+import { ScrollProgress } from '@/components/ui/ScrollProgress'
 import { HeroSection } from '@/components/sections/HeroSection'
 import { CategoriesSection } from '@/components/sections/CategoriesSection'
 import { ExperienceSection } from '@/components/sections/ExperienceSection'
@@ -18,6 +19,7 @@ import { CtaSection } from '@/components/sections/CtaSection'
 export default function App() {
   return (
     <>
+      <ScrollProgress />
       <Header />
       <main>
         <HeroSection />

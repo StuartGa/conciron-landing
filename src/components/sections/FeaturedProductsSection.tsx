@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { siteContent } from '@/data/siteContent'
 import { Container } from '@/components/ui/Container'
 import { ProductCard } from '@/components/ui/ProductCard'
+import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { ScrollRevealStagger } from '@/components/ui/ScrollRevealStagger'
 import { cn } from '@/lib/cn'
 
 /**
@@ -19,25 +21,28 @@ export function FeaturedProductsSection() {
   return (
     <section className="py-20 bg-surface" id="productos">
       <Container>
-        <div className="mb-10 border-b border-surface-container-high pb-6">
+        <ScrollReveal className="mb-10 border-b border-surface-container-high pb-6" variant="rise">
           <p className="text-label-caps text-primary mb-2">{products.eyebrow}</p>
           <h2 className="text-3xl font-extrabold text-white">{products.title}</h2>
-        </div>
+        </ScrollReveal>
 
-        <div
+        <ScrollRevealStagger
+          key={expanded ? 'expanded' : 'collapsed'}
           className={cn(
             'grid gap-6 pb-4',
             'grid-cols-1 sm:grid-cols-2',
             expanded ? 'lg:grid-cols-3' : 'lg:grid-cols-5',
           )}
+          staggerMs={90}
+          variant="layer"
         >
           {visibleItems.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
-        </div>
+        </ScrollRevealStagger>
 
         {hasMore && (
-          <div className="flex justify-center pt-6">
+          <ScrollReveal className="flex justify-center pt-6" variant="rise" delay={200}>
             <button
               type="button"
               onClick={() => setExpanded((open) => !open)}
@@ -58,7 +63,7 @@ export function FeaturedProductsSection() {
                 </svg>
               </span>
             </button>
-          </div>
+          </ScrollReveal>
         )}
       </Container>
     </section>
