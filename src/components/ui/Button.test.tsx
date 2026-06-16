@@ -16,7 +16,7 @@ describe('Button', () => {
 
   it('applies primary variant styles by default', () => {
     render(<Button href="#x">CTA</Button>)
-    expect(screen.getByRole('link')).toHaveClass('bg-primary')
+    expect(screen.getByRole('link')).toHaveClass('bg-primary-strong', 'text-white')
   })
 
   it('applies secondary variant when specified', () => {
