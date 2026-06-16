@@ -6,6 +6,7 @@ import { cn } from '@/lib/cn'
 export interface ScrollRevealStaggerProps extends UseScrollRevealOptions {
   children: ReactNode
   className?: string
+  id?: string
   /** Delay between each child reveal in ms */
   staggerMs?: number
   variant?: 'rise' | 'slide-left' | 'slide-right' | 'layer'
@@ -18,6 +19,7 @@ export interface ScrollRevealStaggerProps extends UseScrollRevealOptions {
 export function ScrollRevealStagger({
   children,
   className,
+  id,
   staggerMs = 120,
   variant = 'rise',
   as: Tag = 'div',
@@ -28,6 +30,7 @@ export function ScrollRevealStagger({
   return (
     <Tag
       ref={ref}
+      id={id}
       className={cn('scroll-reveal-stagger', isVisible && 'scroll-reveal-stagger--visible', className)}
     >
       {Children.map(children, (child, index) => {

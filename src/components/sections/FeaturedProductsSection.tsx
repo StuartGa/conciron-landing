@@ -28,8 +28,9 @@ export function FeaturedProductsSection() {
 
         <ScrollRevealStagger
           key={expanded ? 'expanded' : 'collapsed'}
+          id="featured-products-grid"
           className={cn(
-            'grid gap-6 pb-4',
+            'grid items-stretch gap-6 pb-4 [&>.scroll-reveal-stagger__item]:h-full',
             'grid-cols-1 sm:grid-cols-2',
             expanded ? 'lg:grid-cols-3' : 'lg:grid-cols-5',
           )}

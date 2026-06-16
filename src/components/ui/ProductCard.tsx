@@ -16,10 +16,10 @@ export function ProductCard({ product }: ProductCardProps) {
   const fit = product.imageFit ?? 'contain'
 
   return (
-    <Card hover className="min-w-0 p-5 flex flex-col rounded-sm bg-surface-container">
+    <Card hover className="flex h-full min-w-0 flex-col rounded-sm bg-surface-container p-5">
       <div
         className={cn(
-          'h-40 mb-4 bg-surface-container-high overflow-hidden flex items-center justify-center',
+          'mb-4 flex h-40 shrink-0 items-center justify-center overflow-hidden bg-surface-container-high',
           fit === 'contain' ? 'p-4' : '',
         )}
       >
@@ -32,14 +32,23 @@ export function ProductCard({ product }: ProductCardProps) {
           height={600}
         />
       </div>
-      <h3 className="text-lg font-bold text-white mb-1">{product.title}</h3>
-      <p className="text-sm text-on-surface-variant mb-4 grow">{product.description}</p>
-      <Button variant="tertiary" href={product.href} className="text-xs uppercase p-0 min-h-0">
-        Ver detalles
-        <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-        </svg>
-      </Button>
+      <div className="flex min-h-0 flex-1 flex-col">
+        <h3 className="mb-1 line-clamp-2 min-h-14 text-lg font-bold text-white" title={product.title}>
+          {product.title}
+        </h3>
+        <p
+          className="mb-4 line-clamp-3 min-h-[3.75rem] flex-1 text-sm text-on-surface-variant"
+          title={product.description}
+        >
+          {product.description}
+        </p>
+        <Button variant="tertiary" href={product.href} className="mt-auto shrink-0 p-0 text-xs uppercase min-h-0">
+          Ver detalles
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+          </svg>
+        </Button>
+      </div>
     </Card>
   )
 }
