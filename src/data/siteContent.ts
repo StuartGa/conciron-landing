@@ -13,6 +13,7 @@ export const siteContent: SiteContent = {
     name: 'Conciron',
     tagline: 'Materiales que construyen confianza',
     logoHeader: '/images/logo-conciron-orange.png',
+    logoFooter: '/images/logo-conciron-icon.png',
     logo: '/images/logo-conciron.png',
     logoIcon: '/images/logo-icon.png',
     logoWhite: '/images/logo-conciron-white.png',
