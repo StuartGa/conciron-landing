@@ -12,6 +12,20 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  build: {
+    target: 'es2020',
+    cssMinify: true,
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/react-dom') || id.includes('node_modules/react/')) {
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
   test: {
     globals: true,
     environment: 'jsdom',

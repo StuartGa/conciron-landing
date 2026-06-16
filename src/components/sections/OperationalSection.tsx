@@ -12,7 +12,13 @@ export function OperationalSection() {
   return (
     <section className="relative py-24 bg-surface overflow-hidden">
       <div className="absolute inset-0 z-0 opacity-40">
-        <PublicImage src={operational.image} alt="" className="w-full h-full object-cover grayscale" aria-hidden />
+        <PublicImage
+          src={operational.image}
+          alt={operational.imageAlt}
+          className="w-full h-full object-cover grayscale"
+          loading="lazy"
+          decoding="async"
+        />
         <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent" />
       </div>
       <Container className="relative z-10">

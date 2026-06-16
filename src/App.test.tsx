@@ -17,18 +17,20 @@ describe('App (landing page)', () => {
     ).toBeInTheDocument()
   })
 
-  it('renders all landing section anchors', () => {
+  it('renders all landing section anchors', async () => {
     render(<App />)
+    expect(document.getElementById('main-content')).toBeInTheDocument()
     expect(document.getElementById('inicio')).toBeInTheDocument()
     expect(document.getElementById('categorias')).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: /soluciones para cada etapa/i })).toBeInTheDocument()
     expect(document.getElementById('productos')).toBeInTheDocument()
     expect(document.getElementById('conocenos')).toBeInTheDocument()
     expect(document.getElementById('contacto')).toBeInTheDocument()
   })
 
-  it('renders featured products from content layer', () => {
+  it('renders featured products from content layer', async () => {
     render(<App />)
-    expect(screen.getByText('CPC 30 R')).toBeInTheDocument()
+    expect(await screen.findByText('CPC 30 R')).toBeInTheDocument()
     expect(screen.getByText('CPC 40')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /ver más productos/i })).toBeInTheDocument()
   })

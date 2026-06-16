@@ -23,6 +23,8 @@ npm run test     # suite de tests
 
 **Sitio publicado:** https://stuartga.github.io/conciron-landing/
 
+Ver [docs/SEO.md](docs/SEO.md) para la guía completa de SEO y optimización Lighthouse.
+
 ## Arquitectura
 
 ```

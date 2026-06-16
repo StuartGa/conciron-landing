@@ -15,7 +15,7 @@ export function AboutSection() {
             <p className="text-label-caps text-primary mb-2">{about.eyebrow}</p>
             <h2 className="text-4xl font-extrabold mb-6 leading-tight text-gray-900">{about.title}</h2>
             <p className="text-gray-600 mb-6">{about.description}</p>
-            <Button variant="primary" className="text-sm px-6 py-2 min-h-12">
+            <Button href="#contacto" variant="primary" className="text-sm px-6 py-2 min-h-12">
               {about.ctaLabel}
             </Button>
           </ScrollReveal>

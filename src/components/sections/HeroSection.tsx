@@ -13,7 +13,15 @@ export function HeroSection() {
   return (
     <section className="relative pt-20 h-screen min-h-[600px] flex items-center" id="inicio">
       <div className="absolute inset-0 z-0">
-        <PublicImage src={hero.image} alt="" className="w-full h-full object-cover" aria-hidden />
+        <PublicImage
+          src={hero.image}
+          alt={hero.imageAlt}
+          className="w-full h-full object-cover"
+          fetchPriority="high"
+          decoding="async"
+          width={1920}
+          height={1080}
+        />
         <div className="absolute inset-0 hero-overlay" />
       </div>
 
