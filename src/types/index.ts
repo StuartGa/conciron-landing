@@ -103,6 +103,8 @@ export interface SiteContent {
     eyebrow: string
     title: string
     viewAllHref: string
+    /** Number of product cards shown before the user expands the list */
+    initialVisibleCount: number
     items: Product[]
   }
   capacity: {

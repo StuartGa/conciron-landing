@@ -94,6 +94,7 @@ export const siteContent: SiteContent = {
     eyebrow: 'Productos Destacados',
     title: 'Soluciones para cada etapa de tu obra.',
     viewAllHref: '#productos',
+    initialVisibleCount: 5,
     items: [
       {
         id: 'cpc-30r',
@@ -117,11 +118,31 @@ export const siteContent: SiteContent = {
       },
       {
         id: 'albanileria',
-        title: 'CPO Blanco Albañilería',
+        title: 'CPD Blanco Albañilería',
         description:
           'Mortero para trabajos de albañilería. Cumple NMX-C-021-ONNCCE.',
         image: '/images/product-albanileria.png',
         imageAlt: 'Saco Mortero de Albañilería',
+        href: '#contacto',
+        imageFit: 'contain',
+      },
+      {
+        id: 'cpc-40',
+        title: 'CPC 40',
+        description:
+          'Cemento Portland Compuesto Clase Resistente 40 para estructuras de mayor exigencia. Cumple NMX-C-414-ONNCCE.',
+        image: '/images/product-cpc-40.png',
+        imageAlt: 'Saco Cemento CPC 40',
+        href: '#contacto',
+        imageFit: 'contain',
+      },
+      {
+        id: 'cpc-40rs',
+        title: 'CPC 40 RS',
+        description:
+          'Cemento resistente a sulfatos para tracto y tolva. Ideal para obras con condiciones agresivas.',
+        image: '/images/product-cpc-40rs.png',
+        imageAlt: 'Saco Cemento CPC 40 RS para Tracto y Tolva',
         href: '#contacto',
         imageFit: 'contain',
       },

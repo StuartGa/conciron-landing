@@ -29,7 +29,8 @@ describe('App (landing page)', () => {
   it('renders featured products from content layer', () => {
     render(<App />)
     expect(screen.getByText('CPC 30 R')).toBeInTheDocument()
-    expect(screen.getByText('Concreto Estructural')).toBeInTheDocument()
+    expect(screen.getByText('CPC 40')).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /ver más productos/i })).toBeInTheDocument()
   })
 
   it('renders primary CTA in header', () => {

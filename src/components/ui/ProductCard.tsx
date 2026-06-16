@@ -16,10 +16,7 @@ export function ProductCard({ product }: ProductCardProps) {
   const fit = product.imageFit ?? 'contain'
 
   return (
-    <Card
-      hover
-      className="min-w-[280px] sm:min-w-0 p-5 flex flex-col snap-start rounded-sm bg-surface-container"
-    >
+    <Card hover className="min-w-0 p-5 flex flex-col rounded-sm bg-surface-container">
       <div
         className={cn(
           'h-40 mb-4 bg-surface-container-high overflow-hidden flex items-center justify-center',
