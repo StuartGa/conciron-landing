@@ -19,8 +19,8 @@ export function HeroSection() {
           className="w-full h-full object-cover"
           fetchPriority="high"
           decoding="async"
-          width={1920}
-          height={1080}
+          width={1600}
+          height={2133}
         />
         <div className="absolute inset-0 hero-overlay" />
       </div>

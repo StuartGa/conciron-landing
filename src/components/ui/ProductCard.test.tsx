@@ -7,7 +7,7 @@ const mockProduct: Product = {
   id: 'test',
   title: 'CPC 30 R',
   description: 'Cemento Portland Compuesto',
-  image: '/images/product-cpc-30r.jpg',
+  image: '/images/product-cpc-30r.webp',
   imageAlt: 'Saco de cemento',
   href: '#contacto',
   imageFit: 'contain',

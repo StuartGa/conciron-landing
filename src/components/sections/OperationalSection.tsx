@@ -18,6 +18,8 @@ export function OperationalSection() {
           className="w-full h-full object-cover grayscale"
           loading="lazy"
           decoding="async"
+          width={1600}
+          height={1067}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent" />
       </div>

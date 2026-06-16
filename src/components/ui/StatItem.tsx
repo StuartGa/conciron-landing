@@ -23,9 +23,9 @@ export function StatItem({ stat, light = false }: StatItemProps) {
       >
         <StatIcon name={stat.icon} />
       </div>
-      <h4 className={light ? 'text-3xl font-extrabold text-gray-900 mb-1' : 'text-3xl font-extrabold text-white mb-1'}>
+      <p className={light ? 'text-3xl font-extrabold text-gray-900 mb-1' : 'text-3xl font-extrabold text-white mb-1'}>
         {stat.value}
-      </h4>
+      </p>
       <p className="text-sm font-semibold text-gray-500 uppercase tracking-wide text-label-caps">
         {stat.label}
       </p>

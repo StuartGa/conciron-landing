@@ -4,14 +4,14 @@ import { BrandLogo } from '@/components/ui/BrandLogo'
 
 describe('BrandLogo', () => {
   it('knocks out black background on orange logos by default', () => {
-    render(<BrandLogo src="/images/logo-conciron-orange.png" alt="Conciron" />)
+    render(<BrandLogo src="/images/logo-conciron-orange.webp" alt="Conciron" />)
     const img = document.querySelector('img')
     expect(img).toHaveClass('mix-blend-lighten')
     expect(img).not.toHaveClass('invert')
   })
 
   it('applies white tint when onDark is true', () => {
-    render(<BrandLogo src="/images/logo-conciron.png" alt="Conciron" onDark />)
+    render(<BrandLogo src="/images/logo-conciron.webp" alt="Conciron" onDark />)
     const img = document.querySelector('img')
     expect(img).toHaveClass('brightness-0', 'invert')
     expect(img).not.toHaveClass('mix-blend-lighten')
@@ -20,7 +20,7 @@ describe('BrandLogo', () => {
   it('can disable background knockout', () => {
     render(
       <BrandLogo
-        src="/images/logo-conciron-orange.png"
+        src="/images/logo-conciron-orange.webp"
         alt="Conciron"
         knockoutBackground={false}
       />,

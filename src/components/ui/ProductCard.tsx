@@ -28,6 +28,8 @@ export function ProductCard({ product }: ProductCardProps) {
           alt={product.imageAlt}
           className={cn('h-full w-full', fit === 'contain' ? 'object-contain' : 'object-cover')}
           loading="lazy"
+          width={600}
+          height={600}
         />
       </div>
       <h3 className="text-lg font-bold text-white mb-1">{product.title}</h3>

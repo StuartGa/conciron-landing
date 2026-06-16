@@ -12,11 +12,11 @@ export const siteContent: SiteContent = {
   brand: {
     name: 'Conciron',
     tagline: 'Materiales que construyen confianza',
-    logoHeader: '/images/logo-conciron-orange.png',
-    logoFooter: '/images/logo-conciron-icon.png',
-    logo: '/images/logo-conciron.png',
-    logoIcon: '/images/logo-icon.png',
-    logoWhite: '/images/logo-conciron-white.png',
+    logoHeader: '/images/logo-conciron-orange.webp',
+    logoFooter: '/images/logo-conciron-icon.webp',
+    logo: '/images/logo-conciron.webp',
+    logoIcon: '/images/logo-icon.webp',
+    logoWhite: '/images/logo-conciron-white.webp',
   },
 
   navigation: [
@@ -33,7 +33,7 @@ export const siteContent: SiteContent = {
       'Más de 35 años suministrando concreto, cemento y acero para proyectos de alta exigencia en México.',
     primaryCta: { label: 'Solicitar cotización', href: '#contacto' },
     secondaryCta: { label: 'Ver soluciones', href: '#categorias' },
-    image: '/images/hero.jpg',
+    image: '/images/hero.webp',
     imageAlt: 'Vertido de concreto en obra de construcción',
   },
 
@@ -43,7 +43,7 @@ export const siteContent: SiteContent = {
       title: 'Cemento',
       description:
         'Cemento Portland Compuesto y Mortero de Albañilería de alta calidad.',
-      image: '/images/category-cemento.png',
+      image: '/images/category-cemento.webp',
       imageAlt: 'Presentación de sacos de cemento Conciron',
       href: '#productos',
     },
@@ -52,7 +52,7 @@ export const siteContent: SiteContent = {
       title: 'Concreto',
       description:
         'Concreto premezclado y empaquetado para todo tipo de proyectos.',
-      image: '/images/category-concreto.jpg',
+      image: '/images/category-concreto.webp',
       imageAlt: 'Servicio de concreto premezclado',
       href: '#productos',
     },
@@ -61,7 +61,7 @@ export const siteContent: SiteContent = {
       title: 'Aceros Estructurales',
       description:
         'Varilla de alto grado, perfiles, alambre y más para refuerzo estructural.',
-      image: '/images/category-acero.jpg',
+      image: '/images/category-acero.webp',
       imageAlt: 'Acero estructural en obra',
       href: '#productos',
     },
@@ -86,7 +86,7 @@ export const siteContent: SiteContent = {
     title: 'Precisión operativa para proyectos que no admiten errores.',
     description:
       'Materiales certificados, procesos controlados y un equipo comprometido con la excelencia en cada detalle.',
-    image: '/images/operational.jpg',
+    image: '/images/operational.webp',
     imageAlt: 'Obra de construcción industrial',
   },
 
@@ -101,7 +101,7 @@ export const siteContent: SiteContent = {
         title: 'CPC 30 R',
         description:
           'Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-30r.jpg',
+        image: '/images/product-cpc-30r.webp',
         imageAlt: 'Saco Cemento CPC 30 R',
         href: '#contacto',
         imageFit: 'contain',
@@ -111,7 +111,7 @@ export const siteContent: SiteContent = {
         title: 'CPC 30 RS',
         description:
           'Cemento Portland Compuesto resistente a sulfatos. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-30rs.jpg',
+        image: '/images/product-cpc-30rs.webp',
         imageAlt: 'Saco Cemento CPC 30 RS',
         href: '#contacto',
         imageFit: 'contain',
@@ -121,7 +121,7 @@ export const siteContent: SiteContent = {
         title: 'CPD Blanco Albañilería',
         description:
           'Mortero para trabajos de albañilería. Cumple NMX-C-021-ONNCCE.',
-        image: '/images/product-albanileria.png',
+        image: '/images/product-albanileria.webp',
         imageAlt: 'Saco Mortero de Albañilería',
         href: '#contacto',
         imageFit: 'contain',
@@ -131,7 +131,7 @@ export const siteContent: SiteContent = {
         title: 'CPC 40',
         description:
           'Cemento Portland Compuesto Clase Resistente 40 para estructuras de mayor exigencia. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-40.png',
+        image: '/images/product-cpc-40.webp',
         imageAlt: 'Saco Cemento CPC 40',
         href: '#contacto',
         imageFit: 'contain',
@@ -141,7 +141,7 @@ export const siteContent: SiteContent = {
         title: 'CPC 40 RS',
         description:
           'Cemento resistente a sulfatos para tracto y tolva. Ideal para obras con condiciones agresivas.',
-        image: '/images/product-cpc-40rs.png',
+        image: '/images/product-cpc-40rs.webp',
         imageAlt: 'Saco Cemento CPC 40 RS para Tracto y Tolva',
         href: '#contacto',
         imageFit: 'contain',
@@ -151,7 +151,7 @@ export const siteContent: SiteContent = {
         title: 'Concreto Convencional',
         description:
           'Concreto premezclado para aplicaciones generales en obra: losas, firmes, rellenos y elementos no estructurales.',
-        image: '/images/product-concreto-convencional.jpg',
+        image: '/images/product-concreto-convencional.webp',
         imageAlt: 'Servicio de concreto premezclado convencional',
         href: '#contacto',
         imageFit: 'cover',
@@ -161,7 +161,7 @@ export const siteContent: SiteContent = {
         title: 'Concreto Estructural',
         description:
           'Alta especificación para proyectos que requieren resistencia, durabilidad y seguridad estructural.',
-        image: '/images/product-concreto.jpg',
+        image: '/images/product-concreto.webp',
         imageAlt: 'Camión revolvedora de concreto',
         href: '#contacto',
         imageFit: 'cover',
@@ -174,7 +174,7 @@ export const siteContent: SiteContent = {
     title: 'Cumplimos en tiempo, volumen y especificación.',
     description:
       'Contamos con flotilla propia para asegurar entregas continuas y confiables en obra.',
-    image: '/images/capacity-truck.jpg',
+    image: '/images/capacity-truck.webp',
     imageAlt: 'Camión revolvedora Conciron',
     features: [
       'Flota propia moderna',

@@ -13,7 +13,7 @@ describe('siteConfig SEO', () => {
 
   it('builds absolute URLs for Open Graph and canonical', () => {
     expect(absoluteUrl()).toBe(siteConfig.url)
-    expect(absoluteUrl('/images/hero.jpg')).toBe(`${siteConfig.url}/images/hero.jpg`)
+    expect(absoluteUrl('/images/hero.webp')).toBe(`${siteConfig.url}/images/hero.webp`)
   })
 })
 

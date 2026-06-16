@@ -37,7 +37,10 @@ public/manifest.webmanifest
 |--------------|---------|
 | Code splitting | Secciones bajo el fold con `React.lazy` + `Suspense` |
 | Vendor chunk | `react` + `react-dom` en chunk separado (`vite.config.ts`) |
-| Fuentes | `display=swap`, Work Sans auto-hospedada |
+| Fuentes | Manrope + Work Sans vía `@fontsource` (latin, woff2, sin Google Fonts) |
+| Imágenes | WebP optimizado (`npm run optimize-images`), preload del hero |
+| Contraste | Botones primarios con `text-on-primary` |
+| Encabezados | Jerarquía `h1→h2→h3` corregida; stats/footer sin niveles saltados |
 | Imágenes | `loading="lazy"`, `decoding="async"`, `fetchPriority="high"` en hero |
 | Error boundary | `ErrorBoundary` envuelve la app en `main.tsx` |
 | Accesibilidad | `SkipLink` → `#main-content`, landmarks semánticos |

@@ -4,8 +4,8 @@ import { PublicImage } from '@/components/ui/PublicImage'
 
 describe('PublicImage', () => {
   it('prefixes src with BASE_URL for GitHub Pages compatibility', () => {
-    render(<PublicImage src="/images/hero.jpg" alt="Hero" />)
+    render(<PublicImage src="/images/hero.webp" alt="Hero" />)
     const img = document.querySelector('img')
-    expect(img).toHaveAttribute('src', `${import.meta.env.BASE_URL}images/hero.jpg`)
+    expect(img).toHaveAttribute('src', `${import.meta.env.BASE_URL}images/hero.webp`)
   })
 })

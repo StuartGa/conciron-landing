@@ -23,7 +23,7 @@ export const siteConfig = {
   url: 'https://stuartga.github.io/conciron-landing',
   locale: 'es_MX',
   lang: 'es',
-  ogImage: '/images/hero.jpg',
+  ogImage: '/images/hero.webp',
   themeColor: '#f26522',
   email: 'cotizaciones@conciron.com.mx',
   phone: '+52-55-1234-5678',

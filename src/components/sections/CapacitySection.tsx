@@ -16,6 +16,8 @@ export function CapacitySection() {
             alt={capacity.imageAlt}
             className="w-full h-full object-cover"
             loading="lazy"
+            width={1280}
+            height={1920}
           />
         </ScrollReveal>
         <ScrollReveal className="lg:w-1/2 p-8 lg:p-16 flex flex-col justify-center" variant="slide-right" delay={120}>

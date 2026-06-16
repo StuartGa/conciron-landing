@@ -11,8 +11,11 @@ export function CategoriesSection() {
   const { categories } = siteContent
 
   return (
-    <section className="bg-surface py-12 -mt-16 relative z-20" id="categorias">
+    <section className="bg-surface py-12 -mt-16 relative z-20" id="categorias" aria-labelledby="categorias-heading">
       <Container>
+        <h2 id="categorias-heading" className="sr-only">
+          Líneas de producto Conciron
+        </h2>
         <ScrollRevealStagger
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
           staggerMs={140}

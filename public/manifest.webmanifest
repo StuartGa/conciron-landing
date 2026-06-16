@@ -10,7 +10,7 @@
   "lang": "es-MX",
   "icons": [
     {
-      "src": "/conciron-landing/images/logo-icon.png",
+      "src": "/conciron-landing/images/logo-icon.webp",
       "sizes": "512x512",
       "type": "image/png"
     }

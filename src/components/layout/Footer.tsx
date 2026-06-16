@@ -14,14 +14,20 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
           <div className="lg:col-span-2">
             <a href="#inicio" className="flex items-center gap-3 mb-6">
-              <BrandLogo src={brand.logoFooter} alt={brand.name} className="h-10 w-auto max-w-[140px]" />
+              <BrandLogo
+                src={brand.logoFooter}
+                alt={brand.name}
+                width={280}
+                height={69}
+                className="h-10 w-[109px] object-contain object-left"
+              />
             </a>
             <p className="text-on-surface-variant mb-6 max-w-sm">{footer.description}</p>
           </div>
 
           {footer.linkGroups.map((group) => (
             <div key={group.title}>
-              <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">{group.title}</h4>
+              <p className="text-white font-bold mb-4 uppercase text-xs tracking-wider">{group.title}</p>
               <ul className="space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
@@ -35,7 +41,7 @@ export function Footer() {
           ))}
 
           <div>
-            <h4 className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contacto</h4>
+            <p className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contacto</p>
             <ul className="space-y-3 text-on-surface-variant">
               <li>{footer.contact.phone}</li>
               <li>{footer.contact.email}</li>
