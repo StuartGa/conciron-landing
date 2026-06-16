@@ -20,7 +20,7 @@ export type ButtonProps = ButtonAsButton | ButtonAsLink
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary hover:bg-primary/90 text-on-primary font-bold min-h-12 px-8 py-3 transition-colors',
+    'bg-primary-strong hover:bg-primary-strong/90 text-white font-bold min-h-12 px-8 py-3 transition-colors',
   secondary:
     'border-2 border-on-surface/30 hover:border-primary text-white font-bold min-h-12 px-8 py-3 bg-surface/50 backdrop-blur-sm transition-colors',
   tertiary:
