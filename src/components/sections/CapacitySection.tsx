@@ -1,4 +1,6 @@
 import { siteContent } from '@/data/siteContent'
+import { CheckIcon } from '@/components/ui/icons'
+import { PublicImage } from '@/components/ui/PublicImage'
 
 export function CapacitySection() {
   const { capacity } = siteContent
@@ -7,7 +9,7 @@ export function CapacitySection() {
     <section className="bg-surface-container-high border-t border-b border-outline-variant/30">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row">
         <div className="lg:w-1/2 p-0 h-64 lg:h-auto relative min-h-[16rem]">
-          <img
+          <PublicImage
             src={capacity.image}
             alt={capacity.imageAlt}
             className="w-full h-full object-cover"
@@ -23,9 +25,7 @@ export function CapacitySection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             {capacity.features.map((feature) => (
               <div key={feature} className="flex items-start gap-3">
-                <svg className="w-5 h-5 text-primary shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <CheckIcon />
                 <span className="text-sm text-gray-300">{feature}</span>
               </div>
             ))}

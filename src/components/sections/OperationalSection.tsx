@@ -1,5 +1,6 @@
 import { siteContent } from '@/data/siteContent'
 import { Container } from '@/components/ui/Container'
+import { PublicImage } from '@/components/ui/PublicImage'
 
 /**
  * Full-width banner highlighting operational precision — background image with overlay.
@@ -10,7 +11,7 @@ export function OperationalSection() {
   return (
     <section className="relative py-24 bg-surface">
       <div className="absolute inset-0 z-0 opacity-40">
-        <img src={operational.image} alt="" className="w-full h-full object-cover grayscale" aria-hidden />
+        <PublicImage src={operational.image} alt="" className="w-full h-full object-cover grayscale" aria-hidden />
         <div className="absolute inset-0 bg-gradient-to-r from-surface via-surface/80 to-transparent" />
       </div>
       <Container className="relative z-10">

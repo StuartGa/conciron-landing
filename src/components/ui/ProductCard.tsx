@@ -1,6 +1,7 @@
 import type { Product } from '@/types'
 import { Card } from './Card'
 import { Button } from './Button'
+import { PublicImage } from './PublicImage'
 import { cn } from '@/lib/cn'
 
 interface ProductCardProps {
@@ -25,7 +26,7 @@ export function ProductCard({ product }: ProductCardProps) {
           fit === 'contain' ? 'p-4' : '',
         )}
       >
-        <img
+        <PublicImage
           src={product.image}
           alt={product.imageAlt}
           className={cn('h-full w-full', fit === 'contain' ? 'object-contain' : 'object-cover')}

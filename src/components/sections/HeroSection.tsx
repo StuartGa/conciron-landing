@@ -1,6 +1,7 @@
 import { siteContent } from '@/data/siteContent'
 import { Button } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
+import { PublicImage } from '@/components/ui/PublicImage'
 
 /**
  * Full-viewport hero section — primary value proposition and CTAs for the landing page.
@@ -11,7 +12,7 @@ export function HeroSection() {
   return (
     <section className="relative pt-20 h-screen min-h-[600px] flex items-center" id="inicio">
       <div className="absolute inset-0 z-0">
-        <img src={hero.image} alt="" className="w-full h-full object-cover" aria-hidden />
+        <PublicImage src={hero.image} alt="" className="w-full h-full object-cover" aria-hidden />
         <div className="absolute inset-0 hero-overlay" />
       </div>
 

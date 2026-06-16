@@ -1,6 +1,7 @@
 import type { Category } from '@/types'
 import { Card } from './Card'
 import { Button } from './Button'
+import { PublicImage } from './PublicImage'
 
 interface CategoryCardProps {
   category: Category
@@ -15,7 +16,7 @@ export function CategoryCard({ category, icon }: CategoryCardProps) {
   return (
     <Card hover className="overflow-hidden cursor-pointer group rounded-sm">
       <div className="h-48 relative overflow-hidden">
-        <img
+        <PublicImage
           src={category.image}
           alt={category.imageAlt}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
