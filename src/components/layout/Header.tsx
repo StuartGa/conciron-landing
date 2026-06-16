@@ -23,7 +23,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <a href="#inicio" className="flex items-center gap-3" aria-label={`${brand.name} — inicio`}>
-            <BrandLogo src={brand.logoHeader} onDark={false} alt="" className="h-10 w-auto max-w-[180px]" aria-hidden />
+            <BrandLogo src={brand.logoHeader} alt="" className="h-10 w-auto max-w-[180px]" aria-hidden />
             <span className="sr-only">{brand.name}</span>
           </a>
 

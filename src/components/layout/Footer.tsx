@@ -14,7 +14,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 mb-12">
           <div className="lg:col-span-2">
             <a href="#inicio" className="flex items-center gap-3 mb-6">
-              <BrandLogo src={brand.logoFooter} onDark={false} alt={brand.name} className="h-10 w-auto max-w-[140px]" />
+              <BrandLogo src={brand.logoFooter} alt={brand.name} className="h-10 w-auto max-w-[140px]" />
             </a>
             <p className="text-on-surface-variant mb-6 max-w-sm">{footer.description}</p>
           </div>
