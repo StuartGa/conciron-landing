@@ -21,6 +21,8 @@ npm run build    # compilación de producción
 npm run test     # suite de tests
 ```
 
+**Sitio publicado:** https://stuartga.github.io/conciron-landing/
+
 ## Arquitectura
 
 ```
