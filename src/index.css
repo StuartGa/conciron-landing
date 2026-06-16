@@ -1,0 +1,104 @@
+@import 'tailwindcss';
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/WorkSans-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/WorkSans-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Work Sans';
+  src: url('/fonts/WorkSans-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --color-surface: #131313;
+  --color-surface-dim: #131313;
+  --color-surface-bright: #3a3939;
+  --color-surface-container: #201f1f;
+  --color-surface-container-high: #2a2a2a;
+  --color-surface-container-highest: #353534;
+  --color-on-surface: #e5e2e1;
+  --color-on-surface-variant: #e1bfb3;
+  --color-outline: #a88a7f;
+  --color-outline-variant: #594138;
+  --color-primary: #f26522;
+  --color-primary-bright: #ffb599;
+  --color-on-primary: #5a1c00;
+  --color-primary-container: #f26522;
+  --color-secondary: #c6c6c7;
+  --color-on-secondary: #2f3131;
+  --color-error: #ffb4ab;
+  --color-background: #131313;
+  --color-on-background: #e5e2e1;
+  --color-surface-light: #f4f4f5;
+  --color-footer: #0a0a0a;
+
+  --font-sans: 'Manrope', system-ui, sans-serif;
+  --font-label: 'Work Sans', system-ui, sans-serif;
+
+  --spacing-edge: 20px;
+  --spacing-gutter: 16px;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-on-background font-sans antialiased;
+    margin: 0;
+  }
+}
+
+@layer utilities {
+  .hero-overlay {
+    background: linear-gradient(
+      90deg,
+      rgba(19, 19, 19, 0.9) 0%,
+      rgba(19, 19, 19, 0.7) 40%,
+      rgba(19, 19, 19, 0.1) 100%
+    );
+  }
+
+  .card-hover {
+    @apply transition-[transform,box-shadow] duration-300;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px -5px rgba(242, 101, 34, 0.2);
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .text-label-caps {
+    font-family: var(--font-label);
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+}
