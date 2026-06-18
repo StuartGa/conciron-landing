@@ -1,5 +1,6 @@
 import { siteContent } from '@/data/siteContent'
 import { BrandLogo } from '@/components/ui/BrandLogo'
+import { assetUrl } from '@/lib/assetUrl'
 
 /**
  * Site footer with brand info, navigation groups, contact details and legal links.
@@ -58,7 +59,7 @@ export function Footer() {
           <p>{footer.copyright}</p>
           <div className="flex gap-6">
             {footer.legal.map((link) => (
-              <a key={link.label} href={link.href} className="hover:text-white transition-colors">
+              <a key={link.label} href={assetUrl(link.href)} className="hover:text-white transition-colors">
                 {link.label}
               </a>
             ))}

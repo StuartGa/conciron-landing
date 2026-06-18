@@ -28,6 +28,10 @@ export const siteConfig = {
   email: 'cotizaciones@conciron.com.mx',
   phone: '+52-55-1234-5678',
   country: 'MX',
+  legalPages: {
+    privacy: '/legal/aviso-privacidad.html',
+    terms: '/legal/terminos.html',
+  },
 } as const
 
 /** Builds an absolute URL for Open Graph, JSON-LD, and canonical links. */

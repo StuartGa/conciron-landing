@@ -25,6 +25,8 @@ npm run test     # suite de tests
 
 Ver [docs/SEO.md](docs/SEO.md) para la guía completa de SEO y optimización Lighthouse.
 
+Ver [docs/CLOUDFLARE.md](docs/CLOUDFLARE.md) para cabeceras CSP y seguridad con dominio propio.
+
 ## Arquitectura
 
 ```

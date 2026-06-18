@@ -15,6 +15,7 @@ Guía de las optimizaciones aplicadas para alcanzar **100 % en Lighthouse SEO** 
 | Imágenes con `alt` | `PublicImage` + textos en `siteContent` |
 | Datos estructurados | JSON-LD vía `StructuredData` (Organization, WebSite, WebPage, LocalBusiness) |
 | Enlaces descriptivos | Texto visible en CTAs y navegación |
+| Páginas legales | `public/legal/` — Aviso de privacidad y Términos |
 | `viewport` meta | `index.html` |
 | Open Graph / Twitter Cards | `index.html` |
 | Web App Manifest | `public/manifest.webmanifest` |

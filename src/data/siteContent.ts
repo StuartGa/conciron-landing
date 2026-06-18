@@ -259,8 +259,8 @@ export const siteContent: SiteContent = {
     },
     copyright: '© 2026 Conciron. Todos los derechos reservados.',
     legal: [
-      { label: 'Aviso de privacidad', href: '#contacto' },
-      { label: 'Términos y condiciones', href: '#contacto' },
+      { label: 'Aviso de privacidad', href: '/legal/aviso-privacidad.html' },
+      { label: 'Términos y condiciones', href: '/legal/terminos.html' },
     ],
   },
 }
