@@ -16,6 +16,8 @@ export interface ScrollRevealProps extends UseScrollRevealOptions {
 
 /**
  * Reveals children with a construction "build-up" motion when scrolled into view.
+ * The observer attaches to an outer wrapper so clip-path on the animated inner node
+ * does not block IntersectionObserver (fixes invisible content on desktop).
  */
 export function ScrollReveal({
   children,
@@ -29,17 +31,17 @@ export function ScrollReveal({
   const { ref, isVisible } = useScrollReveal(observerOptions)
 
   return (
-    <Tag
-      ref={ref}
-      className={cn(
-        'scroll-reveal',
-        `scroll-reveal--${variant}`,
-        isVisible && 'scroll-reveal--visible',
-        className,
-      )}
-      style={{ ...style, transitionDelay: `${delay}ms` }}
-    >
-      {children}
+    <Tag ref={ref} className={className} style={style}>
+      <div
+        className={cn(
+          'scroll-reveal h-full w-full',
+          `scroll-reveal--${variant}`,
+          isVisible && 'scroll-reveal--visible',
+        )}
+        style={{ transitionDelay: `${delay}ms` }}
+      >
+        {children}
+      </div>
     </Tag>
   )
 }
