@@ -21,31 +21,37 @@ export function Header() {
       id="navbar"
     >
       <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          <a href="#inicio" className="flex items-center gap-3" aria-label={`${brand.name} — inicio`}>
+        <div className="flex justify-between items-center h-20 gap-6">
+          <a href="#inicio" className="flex items-center gap-3 shrink-0" aria-label={`${brand.name} — inicio`}>
             <BrandLogo
               src={brand.logoHeader}
               alt={brand.name}
               width={400}
-              height={108}
+              height={91}
+              knockoutBackground={false}
               className="h-10 w-auto max-w-[180px] object-contain"
             />
             <span className="sr-only">{brand.name}</span>
           </a>
 
-          <nav className="hidden md:flex items-center gap-8" aria-label="Navegación principal">
-            {navigation.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-semibold text-on-surface hover:text-primary transition-colors"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
+          <div className="hidden md:flex flex-1 items-center justify-end gap-8">
+            <nav className="flex items-center gap-7" aria-label="Navegación principal">
+              {navigation.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-bold uppercase tracking-[0.08em] text-on-surface hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </nav>
+            <Button href="#contacto" className="px-6 py-2 text-sm uppercase tracking-wide">
+              Cotizar
+            </Button>
+          </div>
 
-          <Button href="#contacto" className="px-6 py-2 text-sm">
+          <Button href="#contacto" className="md:hidden px-5 py-2 text-sm uppercase tracking-wide">
             Cotizar
           </Button>
         </div>

@@ -12,11 +12,11 @@ export const siteContent: SiteContent = {
   brand: {
     name: 'Conciron',
     tagline: 'Materiales que construyen confianza',
-    logoHeader: '/images/logo-conciron-orange.webp',
-    logoFooter: '/images/logo-conciron-icon.webp',
-    logo: '/images/logo-conciron.webp',
-    logoIcon: '/images/logo-icon.webp',
-    logoWhite: '/images/logo-conciron-white.webp',
+    logoHeader: '/images/logo-conciron-orange.png',
+    logoFooter: '/images/logo-conciron-icon.png',
+    logo: '/images/logo-conciron.png',
+    logoIcon: '/images/logo-icon.png',
+    logoWhite: '/images/logo-conciron-white.png',
   },
 
   navigation: [
@@ -51,7 +51,7 @@ export const siteContent: SiteContent = {
       id: 'concreto',
       title: 'Concreto',
       description:
-        'Concreto premezclado y empaquetado para todo tipo de proyectos.',
+        'Concreto premezclado estructural y convencional para todo tipo de proyectos.',
       image: '/images/category-concreto.webp',
       imageAlt: 'Servicio de concreto premezclado',
       href: '#productos',
@@ -63,6 +63,15 @@ export const siteContent: SiteContent = {
         'Varilla de alto grado, perfiles, alambre y más para refuerzo estructural.',
       image: '/images/category-acero.webp',
       imageAlt: 'Acero estructural en obra',
+      href: '#productos',
+    },
+    {
+      id: 'otros',
+      title: 'Otros Productos',
+      description:
+        'Materiales para construcción que complementan cada etapa de tu obra.',
+      image: '/images/product-materiales.webp',
+      imageAlt: 'Materiales para construcción',
       href: '#productos',
     },
   ],
@@ -94,77 +103,151 @@ export const siteContent: SiteContent = {
     eyebrow: 'Productos Destacados',
     title: 'Soluciones para cada etapa de tu obra.',
     viewAllHref: '#productos',
-    initialVisibleCount: 5,
-    items: [
+    initialVisibleGroupCount: 2,
+    groups: [
       {
-        id: 'cpc-30r',
-        title: 'CPC 30 R',
-        description:
-          'Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-30r.webp',
-        imageAlt: 'Saco Cemento CPC 30 R',
-        href: '#contacto',
-        imageFit: 'contain',
+        id: 'cemento-envasado',
+        line: 'Cemento',
+        title: 'Cemento Envasado',
+        description: 'Presentación en saco para obra y distribución.',
+        items: [
+          {
+            id: 'cpc-30r',
+            title: 'CPC 30 R',
+            description:
+              'Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida. Cumple NMX-C-414-ONNCCE.',
+            image: '/images/product-cpc-30r.webp',
+            imageAlt: 'Saco Cemento CPC 30 R',
+            href: '#contacto',
+            imageFit: 'contain',
+            presentation: 'Envasado',
+            ctaLabel: 'Cotizar',
+          },
+          {
+            id: 'cpc-30rs',
+            title: 'CPC 30 RS',
+            description:
+              'Cemento Portland Compuesto resistente a sulfatos. Cumple NMX-C-414-ONNCCE.',
+            image: '/images/product-cpc-30rs.webp',
+            imageAlt: 'Saco Cemento CPC 30 RS',
+            href: '#contacto',
+            imageFit: 'contain',
+            presentation: 'Envasado',
+            ctaLabel: 'Cotizar',
+          },
+          {
+            id: 'albanileria',
+            title: 'CPD Blanco Albañilería',
+            description:
+              'Mortero para trabajos de albañilería. Cumple NMX-C-021-ONNCCE.',
+            image: '/images/product-albanileria.webp',
+            imageAlt: 'Saco Mortero de Albañilería',
+            href: '#contacto',
+            imageFit: 'contain',
+            presentation: 'Envasado',
+            ctaLabel: 'Cotizar',
+          },
+        ],
       },
       {
-        id: 'cpc-30rs',
-        title: 'CPC 30 RS',
-        description:
-          'Cemento Portland Compuesto resistente a sulfatos. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-30rs.webp',
-        imageAlt: 'Saco Cemento CPC 30 RS',
-        href: '#contacto',
-        imageFit: 'contain',
+        id: 'cemento-granel',
+        line: 'Cemento',
+        title: 'Cemento a Granel',
+        description: 'Suministro por tracto y tolva para volúmenes mayores.',
+        items: [
+          {
+            id: 'cpc-40',
+            title: 'CPC 40',
+            description:
+              'Cemento Portland Compuesto Clase Resistente 40 para estructuras de mayor exigencia. Cumple NMX-C-414-ONNCCE.',
+            image: '/images/product-cpc-40.webp',
+            imageAlt: 'Suministro de cemento CPC 40 a granel',
+            href: '#contacto',
+            imageFit: 'cover',
+            presentation: 'Granel · Tracto y tolva',
+            ctaLabel: 'Cotizar',
+          },
+          {
+            id: 'cpc-40rs',
+            title: 'CPC 40 RS',
+            description:
+              'Cemento resistente a sulfatos a granel (tracto y tolva). Ideal para obras con condiciones agresivas.',
+            image: '/images/product-cpc-40rs.webp',
+            imageAlt: 'Cemento CPC 40 RS a granel para tracto y tolva',
+            href: '#contacto',
+            imageFit: 'cover',
+            presentation: 'Granel · Tracto y tolva',
+            ctaLabel: 'Cotizar',
+          },
+        ],
       },
       {
-        id: 'albanileria',
-        title: 'CPD Blanco Albañilería',
-        description:
-          'Mortero para trabajos de albañilería. Cumple NMX-C-021-ONNCCE.',
-        image: '/images/product-albanileria.webp',
-        imageAlt: 'Saco Mortero de Albañilería',
-        href: '#contacto',
-        imageFit: 'contain',
+        id: 'concreto',
+        line: 'Concreto',
+        title: 'Concreto',
+        description: 'Premezclado estructural y convencional según especificación de obra.',
+        items: [
+          {
+            id: 'concreto-estructural',
+            title: 'Concreto Estructural',
+            description:
+              'Alta especificación para proyectos que requieren resistencia, durabilidad y seguridad estructural.',
+            image: '/images/product-concreto.webp',
+            imageAlt: 'Camión revolvedora de concreto estructural',
+            href: '#contacto',
+            imageFit: 'cover',
+            ctaLabel: 'Cotizar',
+          },
+          {
+            id: 'concreto-convencional',
+            title: 'Concreto Convencional',
+            description:
+              'Concreto premezclado para aplicaciones generales en obra: losas, firmes, rellenos y elementos no estructurales.',
+            image: '/images/product-concreto-convencional.webp',
+            imageAlt: 'Servicio de concreto premezclado convencional',
+            href: '#contacto',
+            imageFit: 'cover',
+            ctaLabel: 'Cotizar',
+          },
+        ],
       },
       {
-        id: 'cpc-40',
-        title: 'CPC 40',
-        description:
-          'Cemento Portland Compuesto Clase Resistente 40 para estructuras de mayor exigencia. Cumple NMX-C-414-ONNCCE.',
-        image: '/images/product-cpc-40.webp',
-        imageAlt: 'Saco Cemento CPC 40',
-        href: '#contacto',
-        imageFit: 'contain',
+        id: 'aceros',
+        line: 'Aceros Estructurales',
+        title: 'Aceros Estructurales',
+        description: 'Refuerzo y perfiles para estructuras de concreto.',
+        items: [
+          {
+            id: 'acero-estructural',
+            title: 'Varilla y perfiles',
+            description:
+              'Varilla, malla, perfiles y alambre de alto grado para refuerzo estructural.',
+            image: '/images/product-acero.webp',
+            imageAlt: 'Malla y acero de refuerzo estructural',
+            href: '#contacto',
+            imageFit: 'cover',
+            ctaLabel: 'Cotizar',
+          },
+        ],
       },
       {
-        id: 'cpc-40rs',
-        title: 'CPC 40 RS',
-        description:
-          'Cemento resistente a sulfatos para tracto y tolva. Ideal para obras con condiciones agresivas.',
-        image: '/images/product-cpc-40rs.webp',
-        imageAlt: 'Saco Cemento CPC 40 RS para Tracto y Tolva',
-        href: '#contacto',
-        imageFit: 'contain',
-      },
-      {
-        id: 'concreto-convencional',
-        title: 'Concreto Convencional',
-        description:
-          'Concreto premezclado para aplicaciones generales en obra: losas, firmes, rellenos y elementos no estructurales.',
-        image: '/images/product-concreto-convencional.webp',
-        imageAlt: 'Servicio de concreto premezclado convencional',
-        href: '#contacto',
-        imageFit: 'cover',
-      },
-      {
-        id: 'concreto-estructural',
-        title: 'Concreto Estructural',
-        description:
-          'Alta especificación para proyectos que requieren resistencia, durabilidad y seguridad estructural.',
-        image: '/images/product-concreto.webp',
-        imageAlt: 'Camión revolvedora de concreto',
-        href: '#contacto',
-        imageFit: 'cover',
+        id: 'otros',
+        line: 'Otros Productos',
+        title: 'Otros Productos',
+        description: 'Materiales complementarios para construcción.',
+        items: [
+          {
+            id: 'materiales',
+            title: 'Materiales para Construcción',
+            description:
+              'Insumos y materiales que acompañan el suministro de cemento, concreto y acero en obra.',
+            image: '/images/product-materiales.webp',
+            imageAlt: 'Materiales para construcción en obra',
+            href: '#contacto',
+            imageFit: 'cover',
+            ctaLabel: 'Cotizar',
+          },
+        ],
       },
     ],
   },
@@ -189,45 +272,77 @@ export const siteContent: SiteContent = {
     title: 'Construimos más que estructuras, construimos relaciones duraderas.',
     description:
       'Empresa familiar con más de 35 años de experiencia en el suministro de materiales de construcción con presencia en México. Como aliados comerciales de Cementos Moctezuma, nos comprometemos a ofrecer soluciones integrales respaldadas por un servicio profesional.',
-    ctaLabel: 'Conoce nuestra historia',
+    ctaLabel: 'Solicitar cotización',
     identity: [
       {
         id: 'mission',
         title: 'Misión',
         description:
-          'Somos una empresa familiar con más de 35 años de trayectoria en el suministro de cemento, concreto y aceros estructurales. Nos comprometemos a ofrecer soluciones integrales respaldadas por un servicio profesional, entregas puntuales y atención personalizada.',
+          'Ofrecer cemento, concreto y aceros estructurales con servicio profesional, entregas puntuales y atención personalizada.',
         icon: 'mission',
       },
       {
         id: 'vision',
         title: 'Visión',
         description:
-          'Consolidarnos como el proveedor de referencia en materiales para la construcción en México, reconocidos por nuestra capacidad de atender los proyectos más exigentes con excelencia operativa y confiabilidad.',
+          'Ser el proveedor de referencia en materiales para la construcción en México, por excelencia operativa y confiabilidad.',
         icon: 'vision',
       },
       {
         id: 'purpose',
         title: 'Propósito',
         description:
-          'Suministramos los materiales que edifican México, con la solidez, la seriedad y el compromiso que distinguen a nuestra empresa desde hace más de 35 años.',
+          'Suministrar los materiales que edifican México, con la solidez y el compromiso de más de 35 años.',
         icon: 'purpose',
       },
     ],
-    valuesLabel: 'Valores que nos definen:',
+    valuesLabel: 'Valores que nos definen',
     values: [
-      { id: 'compliance', label: 'Cumplimiento', icon: 'compliance' },
-      { id: 'integrity', label: 'Integridad', icon: 'integrity' },
-      { id: 'service', label: 'Servicio', icon: 'service' },
-      { id: 'commitment', label: 'Compromiso', icon: 'commitment' },
-      { id: 'legacy', label: 'Legado', icon: 'legacy' },
+      {
+        id: 'compliance',
+        label: 'Cumplimiento',
+        description: 'Entregamos en tiempo, volumen y especificación.',
+        icon: 'compliance',
+      },
+      {
+        id: 'integrity',
+        label: 'Integridad',
+        description: 'Actuamos con transparencia en cada relación comercial.',
+        icon: 'integrity',
+      },
+      {
+        id: 'service',
+        label: 'Servicio',
+        description: 'Acompañamos cada proyecto con atención cercana.',
+        icon: 'service',
+      },
+      {
+        id: 'commitment',
+        label: 'Compromiso',
+        description: 'Nos involucramos hasta ver tu obra avanzar.',
+        icon: 'commitment',
+      },
+      {
+        id: 'legacy',
+        label: 'Legado',
+        description: 'Más de tres décadas construyendo confianza.',
+        icon: 'legacy',
+      },
     ],
   },
 
   cta: {
     eyebrow: '¿Tienes un proyecto en mente?',
     title: 'Hablemos de tu próximo proyecto.',
-    button: { label: 'Contactar ahora', href: 'mailto:cotizaciones@conciron.com.mx' },
-    email: 'cotizaciones@conciron.com.mx',
+    button: { label: 'Enviar solicitud', href: '#contacto' },
+    form: {
+      nameLabel: 'Nombre',
+      emailLabel: 'Correo',
+      phoneLabel: 'Teléfono',
+      messageLabel: 'Cuéntanos sobre tu proyecto',
+      submitLabel: 'Solicitar cotización',
+      successMessage: 'Gracias. Recibimos tu solicitud y te contactaremos pronto.',
+    },
   },
 
   footer: {
@@ -240,7 +355,7 @@ export const siteContent: SiteContent = {
           { label: 'Cemento', href: '#productos' },
           { label: 'Concreto', href: '#productos' },
           { label: 'Acero Estructural', href: '#productos' },
-          { label: 'Obras Realizadas', href: '#conocenos' },
+          { label: 'Otros Productos', href: '#productos' },
         ],
       },
       {
@@ -248,7 +363,7 @@ export const siteContent: SiteContent = {
         links: [
           { label: 'Conócenos', href: '#conocenos' },
           { label: 'Misión, Visión y Valores', href: '#conocenos' },
-          { label: 'Capacidad Operativa', href: '#experiencia' },
+          { label: 'Capacidad Operativa', href: '#capacidad' },
         ],
       },
     ],

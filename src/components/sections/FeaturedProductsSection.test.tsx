@@ -4,14 +4,16 @@ import userEvent from '@testing-library/user-event'
 import { FeaturedProductsSection } from '@/components/sections/FeaturedProductsSection'
 
 describe('FeaturedProductsSection', () => {
-  it('shows five products initially', () => {
+  it('shows cemento groups initially and hides later lines', () => {
     render(<FeaturedProductsSection />)
     expect(screen.getByText('CPC 30 R')).toBeInTheDocument()
     expect(screen.getByText('CPC 40 RS')).toBeInTheDocument()
+    expect(screen.getByText('Cemento Envasado')).toBeInTheDocument()
+    expect(screen.getByText('Cemento a Granel')).toBeInTheDocument()
     expect(screen.queryByText('Concreto Estructural')).not.toBeInTheDocument()
   })
 
-  it('expands to show all products when the arrow control is clicked', async () => {
+  it('expands to show all product groups when the control is clicked', async () => {
     const user = userEvent.setup()
     render(<FeaturedProductsSection />)
 
@@ -19,6 +21,7 @@ describe('FeaturedProductsSection', () => {
 
     expect(screen.getByText('Concreto Convencional')).toBeInTheDocument()
     expect(screen.getByText('Concreto Estructural')).toBeInTheDocument()
+    expect(screen.getByText('Varilla y perfiles')).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /ver menos productos/i })).toHaveAttribute(
       'aria-expanded',
       'true',

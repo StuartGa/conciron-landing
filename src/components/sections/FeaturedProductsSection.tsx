@@ -7,54 +7,74 @@ import { ScrollRevealStagger } from '@/components/ui/ScrollRevealStagger'
 import { cn } from '@/lib/cn'
 
 /**
- * Featured products grid — shows five items by default with expand control for the full catalog.
+ * Featured products — grouped by product line (Cemento, Concreto, Aceros, Otros).
+ * Shows the first product groups by default with a prominent expand control.
  */
 export function FeaturedProductsSection() {
   const { products } = siteContent
   const [expanded, setExpanded] = useState(false)
 
-  const hasMore = products.items.length > products.initialVisibleCount
-  const visibleItems = expanded
-    ? products.items
-    : products.items.slice(0, products.initialVisibleCount)
+  const hasMore = products.groups.length > products.initialVisibleGroupCount
+  const visibleGroups = expanded
+    ? products.groups
+    : products.groups.slice(0, products.initialVisibleGroupCount)
 
   return (
-    <section className="py-20 bg-surface" id="productos">
+    <section className="py-16 md:py-20 bg-surface" id="productos">
       <Container>
         <ScrollReveal className="mb-10 border-b border-surface-container-high pb-6" variant="rise">
           <p className="text-label-caps text-primary mb-2">{products.eyebrow}</p>
           <h2 className="text-3xl font-extrabold text-white">{products.title}</h2>
         </ScrollReveal>
 
-        <ScrollRevealStagger
-          key={expanded ? 'expanded' : 'collapsed'}
-          id="featured-products-grid"
-          className={cn(
-            'grid items-stretch gap-6 pb-4 [&>.scroll-reveal-stagger__item]:h-full',
-            'grid-cols-1 sm:grid-cols-2',
-            expanded ? 'lg:grid-cols-3' : 'lg:grid-cols-5',
-          )}
-          staggerMs={90}
-          variant="layer"
-        >
-          {visibleItems.map((product) => (
-            <ProductCard key={product.id} product={product} />
+        <div className="space-y-12">
+          {visibleGroups.map((group) => (
+            <ScrollReveal key={group.id} variant="rise">
+              <div className="mb-5">
+                <p className="text-[11px] font-bold uppercase tracking-[0.16em] text-primary mb-1">
+                  {group.line}
+                </p>
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-2">
+                  <h3 className="text-xl md:text-2xl font-bold text-white">{group.title}</h3>
+                  {group.description ? (
+                    <p className="text-sm text-on-surface-variant max-w-md">{group.description}</p>
+                  ) : null}
+                </div>
+              </div>
+
+              <ScrollRevealStagger
+                className={cn(
+                  'grid items-stretch gap-6 [&>.scroll-reveal-stagger__item]:h-full',
+                  'grid-cols-1 sm:grid-cols-2',
+                  group.items.length >= 3 ? 'lg:grid-cols-3' : 'lg:grid-cols-2',
+                )}
+                staggerMs={90}
+                variant="layer"
+              >
+                {group.items.map((product) => (
+                  <ProductCard key={product.id} product={product} />
+                ))}
+              </ScrollRevealStagger>
+            </ScrollReveal>
           ))}
-        </ScrollRevealStagger>
+        </div>
 
         {hasMore && (
-          <ScrollReveal className="flex justify-center pt-6" variant="rise" delay={200}>
+          <ScrollReveal className="flex justify-center pt-12" variant="rise" delay={120}>
             <button
               type="button"
               onClick={() => setExpanded((open) => !open)}
               aria-expanded={expanded}
-              aria-controls="featured-products-grid"
-              className="group inline-flex flex-col items-center gap-2 text-primary font-semibold text-sm transition-colors hover:text-primary-bright min-h-12"
+              className={cn(
+                'group inline-flex items-center gap-3 rounded-sm border-2 border-primary bg-primary/10 px-8 py-4',
+                'text-base font-bold uppercase tracking-[0.08em] text-primary transition-colors',
+                'hover:bg-primary hover:text-on-primary min-h-14',
+              )}
             >
               <span>{expanded ? 'Ver menos productos' : 'Ver más productos'}</span>
               <span
                 className={cn(
-                  'flex h-10 w-10 items-center justify-center rounded-full border-2 border-primary transition-transform duration-300 group-hover:bg-primary/10',
+                  'flex h-8 w-8 items-center justify-center rounded-full border-2 border-current transition-transform duration-300',
                   expanded && 'rotate-180',
                 )}
                 aria-hidden

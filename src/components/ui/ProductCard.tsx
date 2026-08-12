@@ -9,30 +9,34 @@ interface ProductCardProps {
 }
 
 /**
- * Featured product card for the horizontal/grid product showcase.
- * Supports `contain` or `cover` image fitting via `product.imageFit`.
+ * Featured product card for the product showcase grid.
+ * Uses a fixed image frame so every card shares the same visual footprint.
  */
 export function ProductCard({ product }: ProductCardProps) {
   const fit = product.imageFit ?? 'contain'
+  const ctaLabel = product.ctaLabel ?? 'Cotizar'
 
   return (
     <Card hover className="flex h-full min-w-0 flex-col rounded-sm bg-surface-container p-5">
-      <div
-        className={cn(
-          'mb-4 flex h-40 shrink-0 items-center justify-center overflow-hidden bg-surface-container-high',
-          fit === 'contain' ? 'p-4' : '',
-        )}
-      >
+      <div className="relative mb-4 aspect-[4/3] w-full shrink-0 overflow-hidden bg-surface-container-highest">
         <PublicImage
           src={product.image}
           alt={product.imageAlt}
-          className={cn('h-full w-full', fit === 'contain' ? 'object-contain' : 'object-cover')}
+          className={cn(
+            'absolute inset-0 h-full w-full',
+            fit === 'contain' ? 'object-contain p-4' : 'object-cover',
+          )}
           loading="lazy"
           width={600}
-          height={600}
+          height={450}
         />
       </div>
       <div className="flex min-h-0 flex-1 flex-col">
+        {product.presentation ? (
+          <p className="mb-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-primary">
+            {product.presentation}
+          </p>
+        ) : null}
         <h3 className="mb-1 line-clamp-2 min-h-14 text-lg font-bold text-white" title={product.title}>
           {product.title}
         </h3>
@@ -43,7 +47,7 @@ export function ProductCard({ product }: ProductCardProps) {
           {product.description}
         </p>
         <Button variant="tertiary" href={product.href} className="mt-auto shrink-0 p-0 text-xs uppercase min-h-0">
-          Ver detalles
+          {ctaLabel}
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>

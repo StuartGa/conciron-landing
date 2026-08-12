@@ -8,21 +8,21 @@ interface BrandLogoProps extends Omit<ImgHTMLAttributes<HTMLImageElement>, 'src'
   /** Apply white tint for dark header/footer backgrounds */
   onDark?: boolean
   /**
-   * Removes baked-in black background from JPEG/PNG brand assets via blend mode.
-   * Enabled by default for full-color orange logos on dark surfaces.
+   * Removes baked-in black background from legacy JPEG/WebP brand assets via blend mode.
+   * Prefer transparent PNG assets and keep this `false`.
    */
   knockoutBackground?: boolean
 }
 
 /**
  * Brand mark for header and footer on dark surfaces.
- * Orange logos use `mix-blend-lighten` so black pixels disappear into the charcoal background.
+ * Transparent PNG logos render as-is; legacy assets can still use `knockoutBackground`.
  */
 export function BrandLogo({
   src,
   className,
   onDark = false,
-  knockoutBackground = true,
+  knockoutBackground = false,
   ...props
 }: BrandLogoProps) {
   return (

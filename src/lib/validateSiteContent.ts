@@ -18,7 +18,10 @@ export function validateSiteContent(content: SiteContent): SiteContentValidation
   if (!content.brand.name.trim()) errors.push('brand.name is required')
   if (!content.hero.title.trim()) errors.push('hero.title is required')
   if (content.categories.length < 1) errors.push('at least one category is required')
-  if (content.products.items.length < 1) errors.push('at least one product is required')
+  if (content.products.groups.length < 1) errors.push('at least one product group is required')
+  if (content.products.groups.every((group) => group.items.length < 1)) {
+    errors.push('at least one product is required')
+  }
   if (content.experience.stats.length < 1) errors.push('at least one stat is required')
   if (content.about.identity.length < 1) errors.push('at least one identity card is required')
 

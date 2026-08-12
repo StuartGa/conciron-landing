@@ -11,6 +11,7 @@ const mockProduct: Product = {
   imageAlt: 'Saco de cemento',
   href: '#contacto',
   imageFit: 'contain',
+  ctaLabel: 'Cotizar',
 }
 
 describe('ProductCard', () => {
@@ -20,8 +21,8 @@ describe('ProductCard', () => {
     expect(screen.getByText('Cemento Portland Compuesto')).toBeInTheDocument()
   })
 
-  it('links to product detail or contact anchor', () => {
+  it('links to the quote form with Cotizar CTA', () => {
     render(<ProductCard product={mockProduct} />)
-    expect(screen.getByRole('link', { name: /ver detalles/i })).toHaveAttribute('href', '#contacto')
+    expect(screen.getByRole('link', { name: /cotizar/i })).toHaveAttribute('href', '#contacto')
   })
 })

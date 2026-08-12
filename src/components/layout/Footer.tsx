@@ -4,7 +4,7 @@ import { assetUrl } from '@/lib/assetUrl'
 
 /**
  * Site footer with brand info, navigation groups, contact details and legal links.
- * Single-responsibility: renders footer content from the data layer only.
+ * Contact email is intentionally omitted from the visible UI (quote via form).
  */
 export function Footer() {
   const { brand, footer } = siteContent
@@ -19,8 +19,9 @@ export function Footer() {
                 src={brand.logoFooter}
                 alt={brand.name}
                 width={280}
-                height={69}
-                className="h-10 w-[109px] object-contain object-left"
+                height={50}
+                knockoutBackground={false}
+                className="h-10 w-auto max-w-[160px] object-contain object-left"
               />
             </a>
             <p className="text-on-surface-variant mb-6 max-w-sm">{footer.description}</p>
@@ -45,10 +46,9 @@ export function Footer() {
             <p className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contacto</p>
             <ul className="space-y-3 text-on-surface-variant">
               <li>{footer.contact.phone}</li>
-              <li>{footer.contact.email}</li>
               <li>
                 <a href={footer.contact.formHref} className="text-primary hover:text-primary-bright">
-                  Formulario de contacto →
+                  Formulario de cotización →
                 </a>
               </li>
             </ul>

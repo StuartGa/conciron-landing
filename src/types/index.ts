@@ -20,6 +20,18 @@ export interface Product {
   imageAlt: string
   href: string
   imageFit?: 'contain' | 'cover'
+  /** Packaging / presentation hint shown on the card */
+  presentation?: string
+  ctaLabel?: string
+}
+
+export interface ProductGroup {
+  id: string
+  title: string
+  /** Parent line (e.g. Cemento) for clear hierarchy */
+  line: string
+  description?: string
+  items: Product[]
 }
 
 export interface Stat {
@@ -34,6 +46,7 @@ export type StatIcon = 'calendar' | 'delivery' | 'coverage' | 'support'
 export interface ValueChip {
   id: string
   label: string
+  description?: string
   icon: ValueIcon
 }
 
@@ -58,8 +71,18 @@ export interface FooterLinkGroup {
 
 export interface ContactInfo {
   phone: string
+  /** Kept for structured data / backend; not shown in the marketing UI */
   email: string
   formHref: string
+}
+
+export interface ContactFormCopy {
+  nameLabel: string
+  emailLabel: string
+  phoneLabel: string
+  messageLabel: string
+  submitLabel: string
+  successMessage: string
 }
 
 export interface SiteContent {
@@ -103,9 +126,9 @@ export interface SiteContent {
     eyebrow: string
     title: string
     viewAllHref: string
-    /** Number of product cards shown before the user expands the list */
-    initialVisibleCount: number
-    items: Product[]
+    /** Number of product groups shown before the user expands the list */
+    initialVisibleGroupCount: number
+    groups: ProductGroup[]
   }
   capacity: {
     eyebrow: string
@@ -128,7 +151,7 @@ export interface SiteContent {
     eyebrow: string
     title: string
     button: NavLink
-    email: string
+    form: ContactFormCopy
   }
   footer: {
     description: string

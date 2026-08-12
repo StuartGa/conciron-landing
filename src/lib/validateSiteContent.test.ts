@@ -13,7 +13,7 @@ describe('validateSiteContent', () => {
     const result = validateSiteContent({
       ...siteContent,
       categories: [],
-      products: { ...siteContent.products, items: [] },
+      products: { ...siteContent.products, groups: [] },
     })
     expect(result.valid).toBe(false)
     expect(result.errors.length).toBeGreaterThan(0)

@@ -3,29 +3,29 @@ import { render } from '@testing-library/react'
 import { BrandLogo } from '@/components/ui/BrandLogo'
 
 describe('BrandLogo', () => {
-  it('knocks out black background on orange logos by default', () => {
-    render(<BrandLogo src="/images/logo-conciron-orange.webp" alt="Conciron" />)
+  it('renders transparent logos without blend knockout by default', () => {
+    render(<BrandLogo src="/images/logo-conciron-orange.png" alt="Conciron" />)
     const img = document.querySelector('img')
-    expect(img).toHaveClass('mix-blend-lighten')
+    expect(img).not.toHaveClass('mix-blend-lighten')
     expect(img).not.toHaveClass('invert')
   })
 
   it('applies white tint when onDark is true', () => {
-    render(<BrandLogo src="/images/logo-conciron.webp" alt="Conciron" onDark />)
+    render(<BrandLogo src="/images/logo-conciron.png" alt="Conciron" onDark />)
     const img = document.querySelector('img')
     expect(img).toHaveClass('brightness-0', 'invert')
     expect(img).not.toHaveClass('mix-blend-lighten')
   })
 
-  it('can disable background knockout', () => {
+  it('can enable background knockout for legacy assets', () => {
     render(
       <BrandLogo
         src="/images/logo-conciron-orange.webp"
         alt="Conciron"
-        knockoutBackground={false}
+        knockoutBackground
       />,
     )
     const img = document.querySelector('img')
-    expect(img).not.toHaveClass('mix-blend-lighten')
+    expect(img).toHaveClass('mix-blend-lighten')
   })
 })
