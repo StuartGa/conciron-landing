@@ -2,41 +2,42 @@ import { describe, expect, it } from 'vitest'
 import { render, screen } from '@testing-library/react'
 import App from '@/App'
 
-/**
- * Smoke tests for the Conciron landing page — verifies all major sections render.
- * This is a marketing single-page site; tests focus on presence of key content, not routing.
- */
 describe('App (landing page)', () => {
-  it('renders the main hero headline', () => {
+  it('renders the official hero phrase', () => {
     render(<App />)
     expect(
       screen.getByRole('heading', {
         level: 1,
-        name: /soluciones estructurales para construir con certeza/i,
+        name: /más de 35 años construyendo confianza y fortaleciendo la infraestructura de méxico/i,
       }),
     ).toBeInTheDocument()
   })
 
-  it('renders all landing section anchors', async () => {
+  it('renders a single Contáctanos button in the hero', () => {
     render(<App />)
-    expect(document.getElementById('main-content')).toBeInTheDocument()
+    const hero = document.getElementById('inicio')
+    expect(hero).toBeInTheDocument()
+    const heroLinks = hero?.querySelectorAll('a') ?? []
+    const labels = [...heroLinks].map((link) => link.textContent?.replace(/\s+/g, ' ').trim())
+    expect(labels.filter((label) => label?.startsWith('Contáctanos'))).toHaveLength(1)
+    expect(labels.some((label) => label?.includes('Ver productos'))).toBe(false)
+    expect(labels.some((label) => label?.includes('Ver soluciones'))).toBe(false)
+  })
+
+  it('renders the four official section anchors', async () => {
+    render(<App />)
     expect(document.getElementById('inicio')).toBeInTheDocument()
-    expect(document.getElementById('categorias')).toBeInTheDocument()
-    expect(await screen.findByRole('heading', { name: /soluciones para cada etapa/i })).toBeInTheDocument()
+    expect(await screen.findByRole('heading', { name: 'Productos principales' })).toBeInTheDocument()
     expect(document.getElementById('productos')).toBeInTheDocument()
     expect(document.getElementById('conocenos')).toBeInTheDocument()
     expect(document.getElementById('contacto')).toBeInTheDocument()
+    expect(document.getElementById('categorias')).not.toBeInTheDocument()
   })
 
-  it('renders featured products from content layer', async () => {
+  it('renders featured products from the official catalog', async () => {
     render(<App />)
     expect(await screen.findByText('CPC 30 R')).toBeInTheDocument()
     expect(screen.getByText('CPC 40')).toBeInTheDocument()
-    expect(screen.getByRole('button', { name: /ver más productos/i })).toBeInTheDocument()
-  })
-
-  it('renders primary CTA in header', () => {
-    render(<App />)
-    expect(screen.getAllByRole('link', { name: /cotizar/i }).length).toBeGreaterThan(0)
+    expect(screen.getByText('CPD Blanco Albañilería')).toBeInTheDocument()
   })
 })

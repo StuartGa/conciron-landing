@@ -22,6 +22,8 @@ export interface Product {
   imageFit?: 'contain' | 'cover'
   /** Packaging / presentation hint shown on the card */
   presentation?: string
+  subtitle?: string
+  highlights?: string[]
   ctaLabel?: string
 }
 
@@ -31,6 +33,10 @@ export interface ProductGroup {
   /** Parent line (e.g. Cemento) for clear hierarchy */
   line: string
   description?: string
+  image?: string
+  imageAlt?: string
+  catalog?: string[]
+  catalogNote?: string
   items: Product[]
 }
 
@@ -78,11 +84,14 @@ export interface ContactInfo {
 
 export interface ContactFormCopy {
   nameLabel: string
-  emailLabel: string
+  companyLabel: string
   phoneLabel: string
+  emailLabel: string
+  stateLabel: string
   messageLabel: string
   submitLabel: string
   successMessage: string
+  states: string[]
 }
 
 export interface SiteContent {
@@ -99,11 +108,11 @@ export interface SiteContent {
   }
   navigation: NavLink[]
   hero: {
-    eyebrow: string
+    eyebrow?: string
     title: string
-    description: string
+    description?: string
     primaryCta: NavLink
-    secondaryCta: NavLink
+    secondaryCta?: NavLink
     image: string
     imageAlt: string
   }

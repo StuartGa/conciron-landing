@@ -48,7 +48,7 @@ export function Footer() {
               <li>{footer.contact.phone}</li>
               <li>
                 <a href={footer.contact.formHref} className="text-primary hover:text-primary-bright">
-                  Formulario de cotización →
+                  Contáctanos →
                 </a>
               </li>
             </ul>

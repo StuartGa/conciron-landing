@@ -1,70 +1,72 @@
 import { siteContent } from '@/data/siteContent'
-import { Container, Button } from '@/components/ui'
-import { IdentityIcon } from '@/components/ui/icons'
-import { ValueIcon } from '@/components/ui/icons'
+import { Container } from '@/components/ui'
+import { IdentityIcon, ValueIcon } from '@/components/ui/icons'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { ScrollRevealStagger } from '@/components/ui/ScrollRevealStagger'
 
 /**
- * About / Conócenos — tighter layout with clear mission/vision grouping
- * and larger value icons (feedback from client notes).
+ * Sobre la empresa — Misión, Visión, Propósito y Valores (con iconos).
  */
 export function AboutSection() {
   const { about } = siteContent
+  const purpose = about.identity.find((card) => card.id === 'purpose')
+  const identityCards = about.identity.filter((card) => card.id !== 'purpose')
 
   return (
     <section id="conocenos" className="bg-surface-light text-gray-900 py-16 md:py-20">
       <Container>
-        <ScrollReveal className="max-w-3xl mb-12" variant="rise">
-          <p className="text-label-caps text-primary mb-2">{about.eyebrow}</p>
-          <h2 className="text-3xl md:text-4xl font-extrabold mb-4 leading-tight text-gray-900">
-            {about.title}
+        <ScrollReveal className="mb-12" variant="rise">
+          <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-gray-900">
+            {about.eyebrow}
           </h2>
-          <p className="text-gray-600 mb-6">{about.description}</p>
-          <Button href="#contacto" variant="primary" className="text-sm px-6 py-2 min-h-12">
-            {about.ctaLabel}
-          </Button>
         </ScrollReveal>
 
         <ScrollRevealStagger
-          className="grid grid-cols-1 md:grid-cols-3 gap-5 mb-14"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8"
           staggerMs={110}
           variant="layer"
         >
-          {about.identity.map((card) => (
-            <div
-              key={card.id}
-              className="bg-white p-7 border border-gray-100 shadow-sm flex flex-col min-h-[14rem]"
-            >
+          {identityCards.map((card) => (
+            <div key={card.id} className="bg-white p-7 md:p-8 border border-gray-100 shadow-sm flex flex-col">
               <div className="text-primary mb-5">
                 <IdentityIcon icon={card.icon} className="w-10 h-10" />
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-2">{card.title}</h3>
+              <h3 className="font-bold text-gray-900 text-xl mb-3">{card.title}</h3>
               <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
             </div>
           ))}
         </ScrollRevealStagger>
 
+        {purpose ? (
+          <ScrollReveal className="mb-14" variant="rise">
+            <blockquote className="bg-gray-900 text-white p-8 md:p-10 border-l-4 border-primary">
+              <div className="text-primary mb-4">
+                <IdentityIcon icon={purpose.icon} className="w-10 h-10" />
+              </div>
+              <h3 className="text-label-caps text-primary mb-3">{purpose.title}</h3>
+              <p className="text-xl md:text-2xl font-semibold leading-snug">“{purpose.description}”</p>
+            </blockquote>
+          </ScrollReveal>
+        ) : null}
+
         <ScrollReveal variant="rise">
           <div className="border-t border-gray-200 pt-10">
-            <p className="text-sm font-bold uppercase tracking-[0.12em] text-gray-500 mb-8">
-              {about.valuesLabel}
-            </p>
+            <h3 className="text-xl font-bold text-gray-900 mb-8">{about.valuesLabel}</h3>
             <ScrollRevealStagger
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
               staggerMs={70}
               variant="layer"
             >
               {about.values.map((value) => (
                 <div
                   key={value.id}
-                  className="bg-white border border-gray-100 p-6 flex flex-col items-start gap-4 min-h-[11rem]"
+                  className="bg-white border border-gray-100 p-6 flex flex-col items-start gap-4"
                 >
                   <span className="flex h-14 w-14 items-center justify-center rounded-sm bg-primary/10 text-primary">
                     <ValueIcon name={value.icon} className="w-8 h-8 text-primary" />
                   </span>
                   <div>
-                    <p className="font-bold text-gray-900 mb-1">{value.label}</p>
+                    <p className="font-bold text-gray-900 mb-2">{value.label}</p>
                     {value.description ? (
                       <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>
                     ) : null}

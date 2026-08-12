@@ -47,12 +47,12 @@ export function Header() {
               ))}
             </nav>
             <Button href="#contacto" className="px-6 py-2 text-sm uppercase tracking-wide">
-              Cotizar
+              Contáctanos
             </Button>
           </div>
 
           <Button href="#contacto" className="md:hidden px-5 py-2 text-sm uppercase tracking-wide">
-            Cotizar
+            Contáctanos
           </Button>
         </div>
       </div>

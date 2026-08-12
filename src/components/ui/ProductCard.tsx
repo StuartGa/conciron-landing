@@ -9,8 +9,7 @@ interface ProductCardProps {
 }
 
 /**
- * Featured product card for the product showcase grid.
- * Uses a fixed image frame so every card shares the same visual footprint.
+ * Product card for catalog groups. Fixed image frame; optional subtitle and highlights.
  */
 export function ProductCard({ product }: ProductCardProps) {
   const fit = product.imageFit ?? 'contain'
@@ -37,15 +36,28 @@ export function ProductCard({ product }: ProductCardProps) {
             {product.presentation}
           </p>
         ) : null}
-        <h3 className="mb-1 line-clamp-2 min-h-14 text-lg font-bold text-white" title={product.title}>
+        <h3 className="mb-1 text-lg font-bold text-white" title={product.title}>
           {product.title}
         </h3>
-        <p
-          className="mb-4 line-clamp-3 min-h-[3.75rem] flex-1 text-sm text-on-surface-variant"
-          title={product.description}
-        >
-          {product.description}
-        </p>
+        {product.subtitle ? (
+          <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-on-surface-variant">
+            {product.subtitle}
+          </p>
+        ) : null}
+        <p className="mb-3 text-sm leading-relaxed text-on-surface-variant">{product.description}</p>
+        {product.highlights && product.highlights.length > 0 ? (
+          <div className="mb-4">
+            <p className="mb-2 text-xs font-bold uppercase tracking-[0.12em] text-primary">Ventajas</p>
+            <ul className="space-y-1.5 text-sm text-on-surface-variant">
+              {product.highlights.map((item) => (
+                <li key={item} className="flex gap-2">
+                  <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-primary" aria-hidden />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ) : null}
         <Button variant="tertiary" href={product.href} className="mt-auto shrink-0 p-0 text-xs uppercase min-h-0">
           {ctaLabel}
           <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden>

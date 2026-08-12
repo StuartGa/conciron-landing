@@ -1,12 +1,11 @@
 import type { SiteContent } from '@/types'
 
+const catalogNote =
+  'Presentaciones y unidades de venta disponibles según producto. Para conocer existencias, especificaciones técnicas y volúmenes de suministro, contáctanos.'
+
 /**
  * Central content store for the Conciron single-page landing site.
- *
- * All copy, images paths, and navigation anchors live here so sections remain
- * presentational. Edit this file to update marketing content without touching UI code.
- *
- * @see docs/API.md for the `SiteContent` schema
+ * Copy and structure follow the official "Sitio web" brief.
  */
 export const siteContent: SiteContent = {
   brand: {
@@ -27,12 +26,8 @@ export const siteContent: SiteContent = {
   ],
 
   hero: {
-    eyebrow: 'Materiales que construyen confianza',
-    title: 'Soluciones estructurales para construir con certeza.',
-    description:
-      'Más de 35 años suministrando concreto, cemento y acero para proyectos de alta exigencia en México.',
-    primaryCta: { label: 'Solicitar cotización', href: '#contacto' },
-    secondaryCta: { label: 'Ver soluciones', href: '#categorias' },
+    title: 'Más de 35 años construyendo confianza y fortaleciendo la infraestructura de México.',
+    primaryCta: { label: 'Contáctanos', href: '#contacto' },
     image: '/images/hero.webp',
     imageAlt: 'Vertido de concreto en obra de construcción',
   },
@@ -41,38 +36,34 @@ export const siteContent: SiteContent = {
     {
       id: 'cemento',
       title: 'Cemento',
-      description:
-        'Cemento Portland Compuesto y Mortero de Albañilería de alta calidad.',
-      image: '/images/category-cemento.webp',
-      imageAlt: 'Presentación de sacos de cemento Conciron',
-      href: '#productos',
+      description: 'Cemento Portland Compuesto envasado y a granel, y mortero de albañilería.',
+      image: '/images/product-cemento-envasado.webp',
+      imageAlt: 'Presentación de tres sacos de cemento',
+      href: '#cemento-envasado',
     },
     {
       id: 'concreto',
       title: 'Concreto',
-      description:
-        'Concreto premezclado estructural y convencional para todo tipo de proyectos.',
+      description: 'Concreto estructural y convencional según la especificación de cada obra.',
       image: '/images/category-concreto.webp',
       imageAlt: 'Servicio de concreto premezclado',
-      href: '#productos',
+      href: '#concreto',
     },
     {
       id: 'aceros',
       title: 'Aceros Estructurales',
-      description:
-        'Varilla de alto grado, perfiles, alambre y más para refuerzo estructural.',
+      description: 'Varilla, malla, alambre y más para reforzar estructuras de concreto.',
       image: '/images/category-acero.webp',
       imageAlt: 'Acero estructural en obra',
-      href: '#productos',
+      href: '#aceros',
     },
     {
       id: 'otros',
       title: 'Otros Productos',
-      description:
-        'Materiales para construcción que complementan cada etapa de tu obra.',
+      description: 'Cal, yeso, pegazulejo y tabicón para albañilería y acabados.',
       image: '/images/product-materiales.webp',
       imageAlt: 'Materiales para construcción',
-      href: '#productos',
+      href: '#otros',
     },
   ],
 
@@ -100,22 +91,24 @@ export const siteContent: SiteContent = {
   },
 
   products: {
-    eyebrow: 'Productos Destacados',
-    title: 'Soluciones para cada etapa de tu obra.',
+    eyebrow: 'Productos principales',
+    title: 'Productos principales',
     viewAllHref: '#productos',
-    initialVisibleGroupCount: 2,
+    initialVisibleGroupCount: 5,
     groups: [
       {
         id: 'cemento-envasado',
         line: 'Cemento',
         title: 'Cemento Envasado',
-        description: 'Presentación en saco para obra y distribución.',
+        image: '/images/product-cemento-envasado.webp',
+        imageAlt: 'Presentación de tres sacos de cemento Moctezuma',
         items: [
           {
             id: 'cpc-30r',
             title: 'CPC 30 R',
+            subtitle: 'Cemento Portland Compuesto',
             description:
-              'Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida. Cumple NMX-C-414-ONNCCE.',
+              'Nuestro Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida (CPC 30 R), cumple con las especificaciones de calidad establecidas en la Norma Mexicana NMX-C-414-ONNCCE-(VIGENTE).',
             image: '/images/product-cpc-30r.webp',
             imageAlt: 'Saco Cemento CPC 30 R',
             href: '#contacto',
@@ -126,8 +119,9 @@ export const siteContent: SiteContent = {
           {
             id: 'cpc-30rs',
             title: 'CPC 30 RS',
+            subtitle: 'Cemento Portland Compuesto',
             description:
-              'Cemento Portland Compuesto resistente a sulfatos. Cumple NMX-C-414-ONNCCE.',
+              'Nuestro Cemento Portland Compuesto, Clase Resistente 30 de Resistencia Rápida y Resistente a los Sulfatos (CPC 30 R RS), cumple con las especificaciones de calidad establecidas en la Norma Mexicana NMX-C-414-ONNCCE-(VIGENTE).',
             image: '/images/product-cpc-30rs.webp',
             imageAlt: 'Saco Cemento CPC 30 RS',
             href: '#contacto',
@@ -138,8 +132,9 @@ export const siteContent: SiteContent = {
           {
             id: 'albanileria',
             title: 'CPD Blanco Albañilería',
+            subtitle: 'Cemento de Albañilería',
             description:
-              'Mortero para trabajos de albañilería. Cumple NMX-C-021-ONNCCE.',
+              'Nuestro Mortero es un producto para trabajos de albañilería, cumple con todas las especificaciones de calidad establecidas en la Norma Mexicana NMX-C-021-ONNCCE-(VIGENTE).',
             image: '/images/product-albanileria.webp',
             imageAlt: 'Saco Mortero de Albañilería',
             href: '#contacto',
@@ -153,25 +148,26 @@ export const siteContent: SiteContent = {
         id: 'cemento-granel',
         line: 'Cemento',
         title: 'Cemento a Granel',
-        description: 'Suministro por tracto y tolva para volúmenes mayores.',
         items: [
           {
             id: 'cpc-40',
             title: 'CPC 40',
+            subtitle: 'Cemento Portland Compuesto',
             description:
-              'Cemento Portland Compuesto Clase Resistente 40 para estructuras de mayor exigencia. Cumple NMX-C-414-ONNCCE.',
+              'Nuestro Cemento Portland Compuesto, Clase Resistente 40 (CPC 40), cumple con las especificaciones de calidad establecidas en la Norma Mexicana NMX-C-414-ONNCCE-(VIGENTE).',
             image: '/images/product-cpc-40.webp',
             imageAlt: 'Suministro de cemento CPC 40 a granel',
             href: '#contacto',
             imageFit: 'cover',
-            presentation: 'Granel · Tracto y tolva',
+            presentation: 'Granel',
             ctaLabel: 'Cotizar',
           },
           {
             id: 'cpc-40rs',
-            title: 'CPC 40 RS',
+            title: 'CPC 40 RS (para Tracto y Tolva)',
+            subtitle: 'Cemento Portland Compuesto',
             description:
-              'Cemento resistente a sulfatos a granel (tracto y tolva). Ideal para obras con condiciones agresivas.',
+              'Nuestro Cemento Portland Compuesto, Clase Resistente 40 Resistente a los Sulfatos (CPC 40 RS), cumple con las especificaciones de calidad establecidas en la Norma Mexicana NMX-C-414-ONNCCE-(VIGENTE).',
             image: '/images/product-cpc-40rs.webp',
             imageAlt: 'Cemento CPC 40 RS a granel para tracto y tolva',
             href: '#contacto',
@@ -185,13 +181,18 @@ export const siteContent: SiteContent = {
         id: 'concreto',
         line: 'Concreto',
         title: 'Concreto',
-        description: 'Premezclado estructural y convencional según especificación de obra.',
         items: [
           {
             id: 'concreto-estructural',
             title: 'Concreto Estructural',
             description:
-              'Alta especificación para proyectos que requieren resistencia, durabilidad y seguridad estructural.',
+              'Concreto de alta especificación diseñado para proyectos que requieren resistencia, durabilidad y seguridad estructural. Ideal para edificaciones residenciales, comerciales e industriales de alta exigencia.',
+            highlights: [
+              'Menor contracción por secado.',
+              'Mayor resistencia al desgaste e impacto.',
+              'Alto desempeño estructural.',
+              'Disponible en diversas especificaciones según los requerimientos del proyecto.',
+            ],
             image: '/images/product-concreto.webp',
             imageAlt: 'Camión revolvedora de concreto estructural',
             href: '#contacto',
@@ -202,7 +203,13 @@ export const siteContent: SiteContent = {
             id: 'concreto-convencional',
             title: 'Concreto Convencional',
             description:
-              'Concreto premezclado para aplicaciones generales en obra: losas, firmes, rellenos y elementos no estructurales.',
+              'Concreto de uso general diseñado para estructuras menores y proyectos que no requieren un concreto de alta especificación. Ideal para construcciones residenciales y comerciales de hasta dos niveles.',
+            highlights: [
+              'Excelente desempeño para aplicaciones convencionales.',
+              'Fabricado bajo altos estándares de calidad.',
+              'Mayor uniformidad y control que el concreto elaborado en obra.',
+              'Disponible en diversas especificaciones según las necesidades del proyecto.',
+            ],
             image: '/images/product-concreto-convencional.webp',
             imageAlt: 'Servicio de concreto premezclado convencional',
             href: '#contacto',
@@ -215,39 +222,43 @@ export const siteContent: SiteContent = {
         id: 'aceros',
         line: 'Aceros Estructurales',
         title: 'Aceros Estructurales',
-        description: 'Refuerzo y perfiles para estructuras de concreto.',
-        items: [
-          {
-            id: 'acero-estructural',
-            title: 'Varilla y perfiles',
-            description:
-              'Varilla, malla, perfiles y alambre de alto grado para refuerzo estructural.',
-            image: '/images/product-acero.webp',
-            imageAlt: 'Malla y acero de refuerzo estructural',
-            href: '#contacto',
-            imageFit: 'cover',
-            ctaLabel: 'Cotizar',
-          },
+        description:
+          'Productos de acero diseñados para reforzar y brindar resistencia a estructuras de concreto y proyectos de construcción. Ideales para cimentaciones, columnas, losas, muros y elementos estructurales.',
+        image: '/images/product-acero.webp',
+        imageAlt: 'Malla electrosoldada y acero de refuerzo',
+        catalog: [
+          'Varilla de 3/8" a 3/4"',
+          'Varilla de 1" a 1 1/2"',
+          'Alambre',
+          'Alambrón',
+          'Anillos',
+          'Clavo de 2 1/2" a 4"',
+          'Clavo para Concreto',
+          'Malla Electrosoldada 6.6.10.10.',
+          'Malla Electrosoldada 6.6.8.8.',
+          'Malla Electrosoldada 6.6.6.6.',
+          'Malla Electrosoldada 6.6.4.4.',
         ],
+        catalogNote,
+        items: [],
       },
       {
         id: 'otros',
         line: 'Otros Productos',
         title: 'Otros Productos',
-        description: 'Materiales complementarios para construcción.',
-        items: [
-          {
-            id: 'materiales',
-            title: 'Materiales para Construcción',
-            description:
-              'Insumos y materiales que acompañan el suministro de cemento, concreto y acero en obra.',
-            image: '/images/product-materiales.webp',
-            imageAlt: 'Materiales para construcción en obra',
-            href: '#contacto',
-            imageFit: 'cover',
-            ctaLabel: 'Cotizar',
-          },
+        description:
+          'Productos complementarios para trabajos de construcción, albañilería y acabados, seleccionados para brindar calidad, resistencia y eficiencia en proyectos residenciales, comerciales e industriales.',
+        image: '/images/product-materiales.webp',
+        imageAlt: 'Materiales complementarios para construcción',
+        catalog: [
+          'Cal Hidratada',
+          'Yeso Amarrado',
+          'Pegazulejo Pega Rey Blanco',
+          'Pegazulejo Solución Total Bexel',
+          'Tabicón Pesado',
         ],
+        catalogNote,
+        items: [],
       },
     ],
   },
@@ -268,94 +279,134 @@ export const siteContent: SiteContent = {
   },
 
   about: {
-    eyebrow: 'Sobre Conciron',
+    eyebrow: 'Sobre la empresa',
     title: 'Construimos más que estructuras, construimos relaciones duraderas.',
     description:
-      'Empresa familiar con más de 35 años de experiencia en el suministro de materiales de construcción con presencia en México. Como aliados comerciales de Cementos Moctezuma, nos comprometemos a ofrecer soluciones integrales respaldadas por un servicio profesional.',
-    ctaLabel: 'Solicitar cotización',
+      'Empresa familiar y aliados comerciales de Cementos Moctezuma, con más de 35 años suministrando materiales para la industria de la construcción en México.',
+    ctaLabel: 'Contáctanos',
     identity: [
       {
         id: 'mission',
         title: 'Misión',
         description:
-          'Ofrecer cemento, concreto y aceros estructurales con servicio profesional, entregas puntuales y atención personalizada.',
+          'Somos una empresa familiar con más de 35 años de trayectoria en el suministro de cemento, concreto y aceros estructurales para la industria de la construcción en México. Como aliados comerciales de Cementos Moctezuma, nos comprometemos a ofrecer soluciones integrales respaldadas por un servicio profesional, entregas puntuales y atención personalizada. Nuestra razón de ser es contribuir al desarrollo de la infraestructura del país, acompañando a nuestros clientes con la confiabilidad y el compromiso que solo da una empresa construida sobre valores familiares sólidos.',
         icon: 'mission',
       },
       {
         id: 'vision',
         title: 'Visión',
         description:
-          'Ser el proveedor de referencia en materiales para la construcción en México, por excelencia operativa y confiabilidad.',
+          'Consolidarnos como el proveedor de referencia en materiales para la construcción en México, reconocidos por nuestra capacidad de atender los proyectos más exigentes del país con excelencia operativa y confiabilidad. Aspiramos a ser la primera llamada de los grandes constructores — no únicamente por la calidad de nuestros productos, sino por la certeza de que cumpliremos, cada vez, sin excepción.',
         icon: 'vision',
       },
       {
         id: 'purpose',
         title: 'Propósito',
         description:
-          'Suministrar los materiales que edifican México, con la solidez y el compromiso de más de 35 años.',
+          'Suministramos los materiales que edifican México, con la solidez, la seriedad y el compromiso que distinguen a nuestra empresa desde hace más de 35 años.',
         icon: 'purpose',
       },
     ],
-    valuesLabel: 'Valores que nos definen',
+    valuesLabel: 'Valores',
     values: [
       {
         id: 'compliance',
         label: 'Cumplimiento',
-        description: 'Entregamos en tiempo, volumen y especificación.',
+        description:
+          'Entregamos lo que prometemos, en el tiempo acordado. La puntualidad es una expresión de respeto hacia nuestros clientes y sus proyectos.',
         icon: 'compliance',
       },
       {
         id: 'integrity',
         label: 'Integridad',
-        description: 'Actuamos con transparencia en cada relación comercial.',
+        description: 'Actuamos con honestidad y transparencia en cada relación comercial, sin excepciones.',
         icon: 'integrity',
       },
       {
         id: 'service',
         label: 'Servicio',
-        description: 'Acompañamos cada proyecto con atención cercana.',
+        description:
+          'Ponemos las necesidades del cliente en el centro de cada decisión, brindando atención cercana, ágil y orientada a soluciones.',
         icon: 'service',
       },
       {
         id: 'commitment',
         label: 'Compromiso',
-        description: 'Nos involucramos hasta ver tu obra avanzar.',
+        description:
+          'Asumimos cada proyecto con la misma seriedad y dedicación con la que una familia cuida lo que construye.',
         icon: 'commitment',
       },
       {
         id: 'legacy',
         label: 'Legado',
-        description: 'Más de tres décadas construyendo confianza.',
+        description:
+          'Preservamos los principios que nos han definido por más de tres décadas y los fortalecemos para las generaciones que continuarán esta empresa.',
         icon: 'legacy',
       },
     ],
   },
 
   cta: {
-    eyebrow: '¿Tienes un proyecto en mente?',
-    title: 'Hablemos de tu próximo proyecto.',
+    eyebrow: 'Contáctanos',
+    title: 'Cuéntanos sobre tu proyecto.',
     button: { label: 'Enviar solicitud', href: '#contacto' },
     form: {
       nameLabel: 'Nombre',
-      emailLabel: 'Correo',
+      companyLabel: 'Empresa',
       phoneLabel: 'Teléfono',
-      messageLabel: 'Cuéntanos sobre tu proyecto',
-      submitLabel: 'Solicitar cotización',
+      emailLabel: 'Email',
+      stateLabel: 'Estado',
+      messageLabel: 'Mensaje',
+      submitLabel: 'Enviar',
       successMessage: 'Gracias. Recibimos tu solicitud y te contactaremos pronto.',
+      states: [
+        'Aguascalientes',
+        'Baja California',
+        'Baja California Sur',
+        'Campeche',
+        'Chiapas',
+        'Chihuahua',
+        'Ciudad de México',
+        'Coahuila',
+        'Colima',
+        'Durango',
+        'Estado de México',
+        'Guanajuato',
+        'Guerrero',
+        'Hidalgo',
+        'Jalisco',
+        'Michoacán',
+        'Morelos',
+        'Nayarit',
+        'Nuevo León',
+        'Oaxaca',
+        'Puebla',
+        'Querétaro',
+        'Quintana Roo',
+        'San Luis Potosí',
+        'Sinaloa',
+        'Sonora',
+        'Tabasco',
+        'Tamaulipas',
+        'Tlaxcala',
+        'Veracruz',
+        'Yucatán',
+        'Zacatecas',
+      ],
     },
   },
 
   footer: {
     description:
-      'Más de 35 años construyendo proyectos, certidumbre y confianza para el desarrollo y crecimiento en México.',
+      'Más de 35 años construyendo confianza y fortaleciendo la infraestructura de México.',
     linkGroups: [
       {
         title: 'Soluciones',
         links: [
-          { label: 'Cemento', href: '#productos' },
-          { label: 'Concreto', href: '#productos' },
-          { label: 'Acero Estructural', href: '#productos' },
-          { label: 'Otros Productos', href: '#productos' },
+          { label: 'Cemento', href: '#cemento-envasado' },
+          { label: 'Concreto', href: '#concreto' },
+          { label: 'Acero Estructural', href: '#aceros' },
+          { label: 'Otros Productos', href: '#otros' },
         ],
       },
       {
@@ -363,7 +414,7 @@ export const siteContent: SiteContent = {
         links: [
           { label: 'Conócenos', href: '#conocenos' },
           { label: 'Misión, Visión y Valores', href: '#conocenos' },
-          { label: 'Capacidad Operativa', href: '#capacidad' },
+          { label: 'Contáctanos', href: '#contacto' },
         ],
       },
     ],
