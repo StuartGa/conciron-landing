@@ -2,17 +2,15 @@ import type { Product } from '@/types'
 import { Card } from './Card'
 import { Button } from './Button'
 import { PublicImage } from './PublicImage'
-import { cn } from '@/lib/cn'
 
 interface ProductCardProps {
   product: Product
 }
 
 /**
- * Product card for catalog groups. Fixed image frame; optional subtitle and highlights.
+ * Product card for catalog groups. Fixed 4:3 image frame so every card matches.
  */
 export function ProductCard({ product }: ProductCardProps) {
-  const fit = product.imageFit ?? 'contain'
   const ctaLabel = product.ctaLabel ?? 'Cotizar'
 
   return (
@@ -21,13 +19,10 @@ export function ProductCard({ product }: ProductCardProps) {
         <PublicImage
           src={product.image}
           alt={product.imageAlt}
-          className={cn(
-            'absolute inset-0 h-full w-full',
-            fit === 'contain' ? 'object-contain p-4' : 'object-cover',
-          )}
+          className="absolute inset-0 h-full w-full object-cover"
           loading="lazy"
-          width={600}
-          height={450}
+          width={800}
+          height={600}
         />
       </div>
       <div className="flex min-h-0 flex-1 flex-col">

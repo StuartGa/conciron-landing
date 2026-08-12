@@ -19,7 +19,6 @@ export interface Product {
   image: string
   imageAlt: string
   href: string
-  imageFit?: 'contain' | 'cover'
   /** Packaging / presentation hint shown on the card */
   presentation?: string
   subtitle?: string
