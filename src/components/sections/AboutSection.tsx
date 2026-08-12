@@ -22,17 +22,20 @@ export function AboutSection() {
         </ScrollReveal>
 
         <ScrollRevealStagger
-          className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8"
+          className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-8 items-stretch [&>.scroll-reveal-stagger__item]:h-full [&>.scroll-reveal-stagger__item]:flex"
           staggerMs={110}
           variant="layer"
         >
           {identityCards.map((card) => (
-            <div key={card.id} className="bg-white p-7 md:p-8 border border-gray-100 shadow-sm flex flex-col">
+            <div
+              key={card.id}
+              className="bg-white p-7 md:p-8 border border-gray-100 shadow-sm flex h-full w-full flex-col"
+            >
               <div className="text-primary mb-5">
                 <IdentityIcon icon={card.icon} className="w-10 h-10" />
               </div>
               <h3 className="font-bold text-gray-900 text-xl mb-3">{card.title}</h3>
-              <p className="text-sm text-gray-600 leading-relaxed">{card.description}</p>
+              <p className="text-sm text-gray-600 leading-relaxed flex-1">{card.description}</p>
             </div>
           ))}
         </ScrollRevealStagger>
@@ -53,19 +56,19 @@ export function AboutSection() {
           <div className="border-t border-gray-200 pt-10">
             <h3 className="text-xl font-bold text-gray-900 mb-8">{about.valuesLabel}</h3>
             <ScrollRevealStagger
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5"
+              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr gap-5 items-stretch [&>.scroll-reveal-stagger__item]:h-full [&>.scroll-reveal-stagger__item]:flex"
               staggerMs={70}
               variant="layer"
             >
               {about.values.map((value) => (
                 <div
                   key={value.id}
-                  className="bg-white border border-gray-100 p-6 flex flex-col items-start gap-4"
+                  className="bg-white border border-gray-100 p-6 flex h-full w-full flex-col items-start gap-4"
                 >
-                  <span className="flex h-14 w-14 items-center justify-center rounded-sm bg-primary/10 text-primary">
+                  <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-sm bg-primary/10 text-primary">
                     <ValueIcon name={value.icon} className="w-8 h-8 text-primary" />
                   </span>
-                  <div>
+                  <div className="flex flex-1 flex-col">
                     <p className="font-bold text-gray-900 mb-2">{value.label}</p>
                     {value.description ? (
                       <p className="text-sm text-gray-600 leading-relaxed">{value.description}</p>

@@ -31,11 +31,8 @@ export class ErrorBoundary extends Component<ErrorBoundaryProps, ErrorBoundarySt
             <p className="text-on-surface-variant mb-6">
               No pudimos cargar la página. Por favor recarga o contáctanos directamente.
             </p>
-            <a
-              href="mailto:cotizaciones@conciron.com.mx"
-              className="inline-block bg-primary text-white px-6 py-3 font-semibold"
-            >
-              cotizaciones@conciron.com.mx
+            <a href="#contacto" className="inline-block bg-primary text-white px-6 py-3 font-semibold">
+              Contáctanos
             </a>
           </div>
         </div>
