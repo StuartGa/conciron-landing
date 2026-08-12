@@ -9,6 +9,30 @@ describe('validateSiteContent', () => {
     expect(result.errors).toHaveLength(0)
   })
 
+  it('rejects repeated product image paths', () => {
+    const duplicated = {
+      ...siteContent,
+      products: {
+        ...siteContent.products,
+        groups: siteContent.products.groups.map((group) =>
+          group.id === 'concreto'
+            ? {
+                ...group,
+                items: group.items.map((item) => ({
+                  ...item,
+                  image: '/images/product-cpc-40.webp',
+                })),
+              }
+            : group,
+        ),
+      },
+    }
+
+    const result = validateSiteContent(duplicated)
+    expect(result.valid).toBe(false)
+    expect(result.errors.some((error) => error.includes('duplicate product image'))).toBe(true)
+  })
+
   it('fails when required sections are empty', () => {
     const result = validateSiteContent({
       ...siteContent,

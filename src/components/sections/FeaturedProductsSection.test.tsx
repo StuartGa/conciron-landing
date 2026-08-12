@@ -17,4 +17,15 @@ describe('FeaturedProductsSection', () => {
     expect(screen.getByText('Malla Electrosoldada 6.6.10.10.')).toBeInTheDocument()
     expect(screen.getByText('Cal Hidratada')).toBeInTheDocument()
   })
+
+  it('does not render a letterboxed group banner above Cemento Envasado cards', () => {
+    render(<FeaturedProductsSection />)
+
+    expect(
+      screen.queryByRole('img', { name: 'Presentación de tres sacos de cemento Moctezuma' }),
+    ).not.toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Saco Cemento CPC 30 R' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Saco Cemento CPC 30 RS' })).toBeInTheDocument()
+    expect(screen.getByRole('img', { name: 'Saco Mortero de Albañilería' })).toBeInTheDocument()
+  })
 })

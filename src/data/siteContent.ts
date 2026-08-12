@@ -100,8 +100,6 @@ export const siteContent: SiteContent = {
         id: 'cemento-envasado',
         line: 'Cemento',
         title: 'Cemento Envasado',
-        image: '/images/product-cemento-envasado.webp',
-        imageAlt: 'Presentación de tres sacos de cemento Moctezuma',
         items: [
           {
             id: 'cpc-30r',

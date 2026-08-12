@@ -76,15 +76,15 @@ function ProductGroupBlock({ group, hideLine = false }: { group: ProductGroup; h
           <p className="mb-6 text-sm md:text-base text-on-surface-variant max-w-3xl">{group.description}</p>
         ) : null}
 
-        {group.image && !hasCatalog ? (
-          <div className="mb-6 overflow-hidden bg-surface-container-high">
+        {group.image && !hasCatalog && group.items.length === 0 ? (
+          <div className="mb-6 overflow-hidden">
             <PublicImage
               src={group.image}
               alt={group.imageAlt ?? group.title}
-              className="w-full h-56 md:h-80 object-contain bg-surface-container-highest"
+              className="w-full h-56 md:h-80 object-cover"
               loading="lazy"
               width={1200}
-              height={900}
+              height={640}
             />
           </div>
         ) : null}

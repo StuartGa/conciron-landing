@@ -23,6 +23,17 @@ export function validateSiteContent(content: SiteContent): SiteContentValidation
     (group) => group.items.length > 0 || (group.catalog && group.catalog.length > 0),
   )
   if (!hasCatalogContent) errors.push('at least one product is required')
+
+  const productImages = content.products.groups.flatMap((group) => [
+    ...(group.image ? [group.image] : []),
+    ...group.items.map((item) => item.image),
+  ])
+  const seenImages = new Set<string>()
+  for (const image of productImages) {
+    if (seenImages.has(image)) errors.push(`duplicate product image: ${image}`)
+    seenImages.add(image)
+  }
+
   if (content.experience.stats.length < 1) errors.push('at least one stat is required')
   if (content.about.identity.length < 1) errors.push('at least one identity card is required')
 
