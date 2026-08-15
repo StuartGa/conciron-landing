@@ -274,6 +274,8 @@ export const siteContent: SiteContent = {
     title: 'Construimos más que estructuras, construimos relaciones duraderas.',
     description:
       'Empresa familiar y aliados comerciales de Cementos Moctezuma, con más de 35 años suministrando materiales para la industria de la construcción en México.',
+    image: '/images/operational.webp',
+    imageAlt: 'Equipo de obra aplicando acabados en proyecto de construcción',
     ctaLabel: 'Contáctanos',
     identity: [
       {

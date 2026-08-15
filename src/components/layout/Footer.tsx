@@ -3,8 +3,8 @@ import { BrandLogo } from '@/components/ui/BrandLogo'
 import { assetUrl } from '@/lib/assetUrl'
 
 /**
- * Site footer with brand info, navigation groups, contact details and legal links.
- * Contact email is intentionally omitted from the visible UI (quote via form).
+ * Site footer with brand info, navigation groups, contact CTA and legal links.
+ * Phone and email are intentionally omitted from the visible UI (quote via form).
  */
 export function Footer() {
   const { brand, footer } = siteContent
@@ -44,14 +44,9 @@ export function Footer() {
 
           <div>
             <p className="text-white font-bold mb-4 uppercase text-xs tracking-wider">Contacto</p>
-            <ul className="space-y-3 text-on-surface-variant">
-              <li>{footer.contact.phone}</li>
-              <li>
-                <a href={footer.contact.formHref} className="text-primary hover:text-primary-bright">
-                  Contáctanos →
-                </a>
-              </li>
-            </ul>
+            <a href={footer.contact.formHref} className="text-primary hover:text-primary-bright">
+              Contáctanos →
+            </a>
           </div>
         </div>
 

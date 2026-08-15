@@ -75,6 +75,7 @@ export interface FooterLinkGroup {
 }
 
 export interface ContactInfo {
+  /** Kept for structured data / backend; not shown in the marketing UI */
   phone: string
   /** Kept for structured data / backend; not shown in the marketing UI */
   email: string
@@ -150,6 +151,8 @@ export interface SiteContent {
     eyebrow: string
     title: string
     description: string
+    image: string
+    imageAlt: string
     ctaLabel: string
     identity: IdentityCard[]
     valuesLabel: string

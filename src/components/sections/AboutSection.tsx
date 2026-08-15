@@ -1,11 +1,12 @@
 import { siteContent } from '@/data/siteContent'
 import { Container } from '@/components/ui'
 import { IdentityIcon, ValueIcon } from '@/components/ui/icons'
+import { PublicImage } from '@/components/ui/PublicImage'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { ScrollRevealStagger } from '@/components/ui/ScrollRevealStagger'
 
 /**
- * Sobre la empresa — Misión, Visión, Propósito y Valores (con iconos).
+ * Sobre la empresa — intro visual, Misión, Visión, Propósito y Valores.
  */
 export function AboutSection() {
   const { about } = siteContent
@@ -15,10 +16,31 @@ export function AboutSection() {
   return (
     <section id="conocenos" className="bg-surface-light text-gray-900 py-16 md:py-20">
       <Container>
-        <ScrollReveal className="mb-12" variant="rise">
+        <ScrollReveal className="mb-10 md:mb-12" variant="rise">
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-gray-900">
             {about.eyebrow}
           </h2>
+        </ScrollReveal>
+
+        <ScrollReveal className="mb-10 md:mb-12" variant="rise">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-10 items-stretch">
+            <div className="relative min-h-64 md:min-h-80 overflow-hidden bg-gray-200">
+              <PublicImage
+                src={about.image}
+                alt={about.imageAlt}
+                className="absolute inset-0 h-full w-full object-cover"
+                loading="lazy"
+                width={1200}
+                height={900}
+              />
+            </div>
+            <div className="flex flex-col justify-center bg-white border border-gray-100 p-7 md:p-10 shadow-sm">
+              <p className="text-xl md:text-2xl font-bold text-gray-900 leading-snug mb-4">
+                {about.title}
+              </p>
+              <p className="text-sm md:text-base text-gray-600 leading-relaxed">{about.description}</p>
+            </div>
+          </div>
         </ScrollReveal>
 
         <ScrollRevealStagger
